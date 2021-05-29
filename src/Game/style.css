@@ -1,0 +1,23 @@
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  overflow: auto;
+}
+
+.game-image {
+  display: block;
+  position: absolute;
+}
+
+.game-image--clickable {
+  cursor: pointer;
+  width: 70px;
+}
+
+.game-image--tile {
+  width: 45px;
+}

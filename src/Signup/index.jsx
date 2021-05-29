@@ -20,7 +20,7 @@ export const Signup = () => {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('Passwords do not match');
+      return setError('Zadaná hesla se neshodují.');
     }
 
     try {
@@ -35,11 +35,11 @@ export const Signup = () => {
         setLoading(false);
         history.push('/game');
       } else {
-        setError('Failed to create an account');
+        setError('Vytvoření účtu se nezdařilo.');
         setLoading(false);
       }
     } catch {
-      setError('Failed to create an account');
+      setError('Vytvoření účtu se nezdařilo.');
       setLoading(false);
     }
   }
@@ -68,7 +68,7 @@ export const Signup = () => {
     <>
       <div className="base_form_wrapper">
         <h2>Registrace</h2>
-        {error && <div>{error}</div>}
+
         <form className="base_form" onSubmit={handleSubmit}>
           <div className="base_form__box">
             <input
@@ -78,9 +78,7 @@ export const Signup = () => {
               ref={emailRef}
               required
             />
-            <label htmlFor="email-signup" email-signup>
-              Email:
-            </label>
+            <label htmlFor="email-signup">Email:</label>
             <div className="error">Zadejte validní email</div>
           </div>
           <div className="base_form__box">
@@ -125,11 +123,12 @@ export const Signup = () => {
           <button disabled={loading || cannotContinue} type="submit">
             Registrovat se
           </button>
+          {error && <div className="error-message">{error}</div>}
         </form>
 
         <div>
-          Již máte účet?{' '}
-          <Link className="link" to="/login">
+          Již máte účet?
+          <Link className="link link-left-space" to="/login">
             Přihlásit se
           </Link>
         </div>

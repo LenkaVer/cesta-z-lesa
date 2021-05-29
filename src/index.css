@@ -118,6 +118,13 @@ body {
   font-size: 12px;
 }
 
+.base_form .error-message {
+  color: rgb(201, 13, 13);
+  margin-top: 2px;
+  font-size: 12px;
+  text-align: center;
+}
+
 .base_form .base_form__box input:not(:placeholder-shown):invalid ~ .error {
   display: block;
 }
