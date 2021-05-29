@@ -21,3 +21,9 @@
 .game-image--tile {
   width: 45px;
 }
+
+.game-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

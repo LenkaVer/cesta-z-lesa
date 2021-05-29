@@ -13,7 +13,7 @@ import { ForgotPassword } from './ForgotPassword';
 import { Topbar } from './Topbar';
 import { SignupAnonymous } from './SignupAnonymous';
 import { SetUser } from './SetUser';
-import './index.css';
+import './style.css';
 
 function App() {
   return (
