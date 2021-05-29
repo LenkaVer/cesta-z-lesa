@@ -20,35 +20,62 @@ export const Login = () => {
       setLoading(false);
       history.push('/game');
     } catch {
-      setError('Failed to log in');
+      setError('Přihlášení se nezdařilo');
       setLoading(false);
     }
   }
 
   return (
     <>
-      <div>
+      <div className="base_form_wrapper">
         <h2>Přihlášení</h2>
         {error && <div>{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email
-            <input type="email" ref={emailRef} required />
-          </label>
-          <label>
-            Heslo
-            <input type="password" ref={passwordRef} required />
-          </label>
+        <form className="base_form" onSubmit={handleSubmit}>
+          <div className="base_form__box">
+            <input
+              id="email"
+              type="email"
+              placeholder=" "
+              ref={emailRef}
+              required
+            />
+            <label htmlFor="email">Email:</label>
+            <div className="error">Zadejte validní email</div>
+          </div>
+          <div className="base_form__box">
+            <input
+              id="password"
+              type="password"
+              placeholder=" "
+              ref={passwordRef}
+              required
+            />
+            <label htmlFor="password">Heslo:</label>
+          </div>
           <button disabled={loading} type="submit">
             Přihlásit se
           </button>
         </form>
-        <div className="w-100 text-center mt-3">
-          <Link to="/forgot-password">Zapomněli jste heslo?</Link>
+
+        <div>
+          <Link className="link" to="/forgot-password">
+            Zapomněli jste heslo?
+          </Link>
         </div>
-      </div>
-      <div className="w-100 text-center mt-2">
-        Nemáte ještě účet? <Link to="/signup">Zaregistrujte se</Link>
+
+        <div>
+          Nemáte ještě účet?
+          <Link className="link link-left-space" to="/signup">
+            Zaregistrujte se
+          </Link>
+        </div>
+
+        <div>
+          Chcete pokračovat bez registrace?
+          <Link className="link link-left-space" to="/signup-anonymous">
+            Pokračovat bez registrace
+          </Link>
+        </div>
       </div>
     </>
   );

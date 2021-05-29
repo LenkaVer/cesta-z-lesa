@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from './../Auth/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import { db } from './../firebase';
 
 export const Signup = () => {
   const emailRef = useRef();
@@ -9,7 +10,10 @@ export const Signup = () => {
   const usernameRef = useRef();
   const { signup, createUserData } = useAuth();
   const [error, setError] = useState('');
+  const [errorUsername, setErrorUsername] = useState('');
   const [loading, setLoading] = useState(false);
+  const [cannotContinue, setCannotContinue] = useState(true);
+  const [username, setUsername] = useState('');
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -39,36 +43,96 @@ export const Signup = () => {
       setLoading(false);
     }
   }
+  const handleUsernameChanged = (e) => {
+    if (e.target.value !== '') {
+      db.collection('users')
+        .where('username', '==', e.target.value)
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.docs.length > 0) {
+            setErrorUsername('Uživatel s danou přezdívkou již existuje');
+            setCannotContinue(true);
+          } else {
+            setCannotContinue(false);
+            setErrorUsername('');
+          }
+        });
+    } else {
+      setCannotContinue(true);
+      setErrorUsername('Zadejte přezdívku');
+    }
+
+    setUsername(e.target.value);
+    usernameRef.current.setCustomValidity(errorUsername);
+  };
 
   return (
     <>
-      <div>
-        <h2 className="text-center mb-4">Registrace</h2>
+      <div className="base_form_wrapper">
+        <h2>Registrace</h2>
         {error && <div>{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email
-            <input type="email" ref={emailRef} required />
-          </label>
-          <label>
-            Přezdívka
-            <input type="text" ref={usernameRef} required />
-          </label>
-          <label>
-            Heslo
-            <input type="password" ref={passwordRef} required />
-          </label>
-          <label>
-            Potvrzení hesla
-            <input type="password" ref={passwordConfirmRef} required />
-          </label>
-          <button disabled={loading} type="submit">
+        <form className="base_form" onSubmit={handleSubmit}>
+          <div className="base_form__box">
+            <input
+              id="email-signup"
+              type="email"
+              placeholder=" "
+              ref={emailRef}
+              required
+            />
+            <label htmlFor="" email-signup>
+              Email:
+            </label>
+            <div className="error">Zadejte validní email</div>
+          </div>
+          <div className="base_form__box">
+            <input
+              id="nickname-signup"
+              type="text"
+              onChange={handleUsernameChanged}
+              value={username}
+              ref={usernameRef}
+              placeholder=" "
+              required
+            />
+            <label htmlFor="nickname-signup">Přezdívka:</label>
+            {errorUsername && <div className="error">{errorUsername}</div>}
+          </div>
+          <div className="base_form__box">
+            <input
+              id="password-signup"
+              type="password"
+              ref={passwordRef}
+              placeholder=" "
+              required
+              minLength="6"
+            />
+            <label htmlFor='"password-signup"'>Heslo:</label>
+            <div className="error">Heslo musí mít nejméně 6 znaků</div>
+          </div>
+          <div className="base_form__box">
+            <input
+              id="password-confirm"
+              type="password"
+              ref={passwordConfirmRef}
+              placeholder=" "
+              required
+              minLength="6"
+            />
+            <label htmlFor="password-confirm">Potvrzení hesla:</label>
+            <div className="error">Heslo musí mít nejméně 6 znaků</div>
+          </div>
+          <button disabled={loading || cannotContinue} type="submit">
             Registrovat se
           </button>
         </form>
-      </div>
-      <div>
-        Již máte účet? <Link to="/login">Přihlásit se</Link>
+
+        <div>
+          Již máte účet?{' '}
+          <Link className="link" to="/login">
+            Přihlásit se
+          </Link>
+        </div>
       </div>
     </>
   );

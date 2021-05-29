@@ -20,17 +20,19 @@ function App() {
     <AuthProvider>
       <Router>
         <Topbar></Topbar>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <PrivateRoute path="/profile" component={Profile} />
-          <Route path="/login" component={Login} />
-          <PrivateRoute path="/game" component={Game} />
-          <PrivateRoute path="/update-profile" component={UpdateProfile} />
-          <Route path="/set-user" component={SetUser} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/signup-anonymous" component={SignupAnonymous} />
-          <Route path="/forgot-password" component={ForgotPassword} />
-        </Switch>
+        <main className="main">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <PrivateRoute path="/profile" component={Profile} />
+            <Route path="/login" component={Login} />
+            <PrivateRoute path="/game" component={Game} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <Route path="/set-user" component={SetUser} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/signup-anonymous" component={SignupAnonymous} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          </Switch>
+        </main>
       </Router>
     </AuthProvider>
   );

@@ -61,7 +61,7 @@ export const UpdateProfile = () => {
             <input
               type="password"
               ref={passwordRef}
-              placeholder="Pro zachování hesla nechte prázdé"
+              placeholder="Pro zachování hesla nechte prázdné"
             />
           </label>
 
@@ -70,11 +70,11 @@ export const UpdateProfile = () => {
             <input
               type="password"
               ref={passwordConfirmRef}
-              placeholder="Pro zachování hesla nechte prázdé"
+              placeholder="Pro zachování hesla nechte prázdné"
             />
           </label>
 
-          <button disabled={loading} className="w-100" type="submit">
+          <button disabled={loading} type="submit">
             Update
           </button>
         </form>

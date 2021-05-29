@@ -27,23 +27,36 @@ export const ForgotPassword = () => {
 
   return (
     <>
-      <div>
+      <div className="base_form_wrapper">
         <h2>Zapomenuté heslo</h2>
         {error && <div>{error}</div>}
         {message && <div>{message}</div>}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email
-            <input type="email" ref={emailRef} required />
-          </label>
+        <form className="base_form" onSubmit={handleSubmit}>
+          <div className="base_form__box">
+            <input
+              id="email-newpassword"
+              type="email"
+              placeholder=" "
+              ref={emailRef}
+              required
+            />
+            <label htmlFor="email-newpassword">Email:</label>
+          </div>
           <button disabled={loading}>Obnovit heslo</button>
         </form>
+
         <div>
-          <Link to="/login">Přihlásit se</Link>
+          <Link className="link" to="/login">
+            Přihlásit se
+          </Link>
         </div>
-      </div>
-      <div>
-        Nemáte ještě účet? <Link to="/signup">Zaregistrujte se</Link>
+
+        <div>
+          Nemáte ještě účet?
+          <Link className="link link-left-space" to="/signup">
+            Zaregistrujte se
+          </Link>
+        </div>
       </div>
     </>
   );

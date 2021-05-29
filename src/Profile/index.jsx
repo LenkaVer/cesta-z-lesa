@@ -20,16 +20,18 @@ export const Profile = () => {
 
   return (
     <>
-      <div>
-        <h2 className="text-center mb-4">Profil</h2>
-        {error && <div>{error}</div>}
-        <strong>Email:</strong> {currentUser.email}
-        <Link to="/update-profile">Upravit profil</Link>
-      </div>
-      <div>
-        <button variant="link" onClick={handleLogout}>
-          Odhlásit se
-        </button>
+      <div className="base_form_wrapper">
+        <div>
+          <h2 className="text-center mb-4">Profil</h2>
+          {error && <div>{error}</div>}
+          <strong>Email:</strong> {currentUser.email}
+          <Link to="/update-profile">Upravit profil</Link>
+        </div>
+        <div>
+          <button variant="link" onClick={handleLogout}>
+            Odhlásit se
+          </button>
+        </div>
       </div>
     </>
   );

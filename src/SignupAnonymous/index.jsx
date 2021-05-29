@@ -1,12 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../Auth/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import { db } from './../firebase';
 
 export const SignupAnonymous = () => {
-  const usernameRef = useRef();
   const { signupAnonymous, createUserData } = useAuth();
   const [error, setError] = useState('');
+  const [cannotContinue, setCannotContinue] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState('');
+  const usernameRef = useRef();
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -29,26 +32,66 @@ export const SignupAnonymous = () => {
     }
   }
 
+  const handleUsernameChanged = (e) => {
+    if (e.target.value !== '') {
+      db.collection('users')
+        .where('username', '==', e.target.value)
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.docs.length > 0) {
+            setError('Uživatel s danou přezdívkou již exituje');
+            setCannotContinue(true);
+          } else {
+            setCannotContinue(false);
+            setError('');
+          }
+        })
+        .catch((error) => {
+          console.log('Error getting documents: ', error);
+        });
+    } else {
+      setCannotContinue(true);
+      setError('Zadejte přezdívku');
+    }
+    setUsername(e.target.value);
+    usernameRef.current.setCustomValidity(error);
+  };
+
   return (
     <>
-      <div>
-        <h2 className="text-center mb-4">Bez registrace</h2>
-        {error && <div>{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Přezdívka
-            <input type="text" ref={usernameRef} required />
-          </label>
-          <button disabled={loading} type="submit">
+      <div className="base_form_wrapper">
+        <h2>Bez registrace</h2>
+
+        <form className="base_form" onSubmit={handleSubmit}>
+          <div className="base_form__box">
+            <input
+              id="nickname-anonymously"
+              onChange={handleUsernameChanged}
+              value={username}
+              type="text"
+              placeholder=" "
+              ref={usernameRef}
+              required
+            />
+            <label htmlFor="nickname-anonymously">Přezdívka:</label>
+            {error && <div className="error">{error}</div>}
+          </div>
+          <button disabled={loading || cannotContinue} type="submit">
             Pokračovat
           </button>
         </form>
-      </div>
-      <div>
-        Již máte účet? <Link to="/login">Přihlásit se</Link>
-      </div>
-      <div>
-        <Link to="/signup">Registrovat se</Link>
+
+        <div>
+          Již máte účet?
+          <Link className="link link-left-space" to="/login">
+            Přihlásit se
+          </Link>
+        </div>
+        <div>
+          <Link className="link" to="/signup">
+            Registrovat se
+          </Link>
+        </div>
       </div>
     </>
   );

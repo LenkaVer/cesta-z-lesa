@@ -4,8 +4,15 @@ import { Link } from 'react-router-dom';
 export const Home = () => {
   return (
     <>
-      <div>Domovská stránka</div>
-      <Link to="/game">Hra</Link>
+      <div
+        className="homepage"
+        style={{ textAlign: 'center', marginTop: '5rem' }}
+      >
+        <div>Domovská stránka</div>
+        <Link className="link" to="/game">
+          Hra
+        </Link>
+      </div>
     </>
   );
 };

@@ -3,7 +3,7 @@ import { useAuth } from './../Auth/AuthContext';
 import { useHistory } from 'react-router-dom';
 
 export const Topbar = () => {
-  const { currentUser, currentUserData, logout } = useAuth();
+  const { currentUser, currentUserData, logout, updateUserData } = useAuth();
   const [error, setError] = useState('');
   const history = useHistory();
 
@@ -17,18 +17,27 @@ export const Topbar = () => {
       setError('Failed to log out');
     }
   }
+
+  const handleNewGame = () => {
+    currentUserData.currentGame = null;
+    updateUserData(currentUser.uid, currentUserData);
+  };
+
   return (
-    <div>
-      <h1>Zvířata</h1>
+    <div className="base_form_wrapper">
+      <h1 style={{ textAlign: 'center', color: '#1f6101' }}>Cesta z lesa</h1>
       {error ? <div>{error}</div> : null}
       {currentUser && currentUserData ? (
         <>
           <div>
             {currentUserData.username} ({currentUserData.points})
           </div>
-          <button variant="link" onClick={handleLogout}>
-            Odhlásit se
-          </button>
+          <div>
+            <button variant="link" onClick={handleLogout}>
+              Odhlásit se
+            </button>
+            <button onClick={handleNewGame}>Nová hra</button>
+          </div>
         </>
       ) : null}
     </div>
