@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useAuth } from '../Auth/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 import { db } from './../firebase';
@@ -32,10 +32,10 @@ export const SignupAnonymous = () => {
     }
   }
 
-  const handleUsernameChanged = (e) => {
-    if (e.target.value !== '') {
+  useEffect(() => {
+    if (username !== '') {
       db.collection('users')
-        .where('username', '==', e.target.value)
+        .where('username', '==', username)
         .get()
         .then((querySnapshot) => {
           if (querySnapshot.docs.length > 0) {
@@ -45,17 +45,14 @@ export const SignupAnonymous = () => {
             setCannotContinue(false);
             setError('');
           }
-        })
-        .catch((error) => {
-          console.log('Error getting documents: ', error);
         });
     } else {
       setCannotContinue(true);
       setError('Zadejte přezdívku');
     }
-    setUsername(e.target.value);
+
     usernameRef.current.setCustomValidity(error);
-  };
+  }, [username, error]);
 
   return (
     <>
@@ -66,7 +63,9 @@ export const SignupAnonymous = () => {
           <div className="base_form__box">
             <input
               id="nickname-anonymously"
-              onChange={handleUsernameChanged}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
               value={username}
               type="text"
               placeholder=" "

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useAuth } from './../Auth/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 import { db } from './../firebase';
@@ -43,10 +43,10 @@ export const Signup = () => {
       setLoading(false);
     }
   }
-  const handleUsernameChanged = (e) => {
-    if (e.target.value !== '') {
+  useEffect(() => {
+    if (username !== '') {
       db.collection('users')
-        .where('username', '==', e.target.value)
+        .where('username', '==', username)
         .get()
         .then((querySnapshot) => {
           if (querySnapshot.docs.length > 0) {
@@ -61,10 +61,8 @@ export const Signup = () => {
       setCannotContinue(true);
       setErrorUsername('Zadejte přezdívku');
     }
-
-    setUsername(e.target.value);
     usernameRef.current.setCustomValidity(errorUsername);
-  };
+  }, [username, errorUsername]);
 
   return (
     <>
@@ -80,7 +78,7 @@ export const Signup = () => {
               ref={emailRef}
               required
             />
-            <label htmlFor="" email-signup>
+            <label htmlFor="email-signup" email-signup>
               Email:
             </label>
             <div className="error">Zadejte validní email</div>
@@ -89,7 +87,9 @@ export const Signup = () => {
             <input
               id="nickname-signup"
               type="text"
-              onChange={handleUsernameChanged}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
               value={username}
               ref={usernameRef}
               placeholder=" "
