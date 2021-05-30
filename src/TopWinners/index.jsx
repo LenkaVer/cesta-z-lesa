@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useAuth } from './../Auth/AuthContext';
 import { db } from './../firebase';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 
 export const TopWinners = () => {
+  const { currentUser } = useAuth();
   const [topTenPlayers, setTopTenPlayers] = useState([]);
   useEffect(() => {
     db.collection('users')
@@ -28,15 +31,21 @@ export const TopWinners = () => {
         <h2>Nejlepší hráči</h2>
         <div className="winners">
           {topTenPlayers.map((player) => {
+            const playerClass =
+              currentUser && currentUser.uid === player.id
+                ? 'winners__winner winners__winner--current'
+                : 'winners__winner';
             return (
-              <div key={player.id} className="winners__winner">
+              <div key={player.id} className={playerClass}>
                 {player.username} ({player.bestScore})
               </div>
             );
           })}
         </div>
         <div className="next">
-          <button className="btn-winners btn-next">Pokračovat</button>
+          <Link className="btn" to="/game">
+            Hrát znovu
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,7 @@
 .top-winners {
   text-align: center;
 }
+.winners__winner--current {
+  color: red;
+  font-weight: bold;
+}
