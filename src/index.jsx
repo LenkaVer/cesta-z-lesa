@@ -7,6 +7,7 @@ import { Home } from './Home';
 import { Profile } from './Profile';
 import { Login } from './Login';
 import { Game } from './Game';
+import { TopWinners } from './TopWinners';
 import { UpdateProfile } from './UpdateProfile';
 import { Signup } from './Signup';
 import { ForgotPassword } from './ForgotPassword';
@@ -26,6 +27,7 @@ function App() {
             <PrivateRoute path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/game" component={Game} />
+            <Route exact path="/top-winners" component={TopWinners} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <Route path="/set-user" component={SetUser} />
             <Route path="/signup" component={Signup} />

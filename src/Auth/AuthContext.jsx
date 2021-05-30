@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       .doc(uid)
       .set({
         username: username,
-        points: 0,
+        bestScore: 0,
       })
       .then(() => {
         //console.log('Document successfully written!');

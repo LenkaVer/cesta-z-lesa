@@ -11,10 +11,14 @@ export const Answered = () => {
     currentUserData.currentGame.levels.push(
       currentUserData.currentGame.question.answered,
     );
+    if (currentUserData.currentGame.question.answered.correct) {
+      currentUserData.currentGame.points += 10;
+    }
     currentUserData.currentGame.question = {
       active: false,
       answered: null,
     };
+
     updateUserData(currentUser.uid, currentUserData);
   };
 
@@ -27,6 +31,7 @@ export const Answered = () => {
     <div>
       {currentUserData.currentGame.question.answered.correct ? (
         <div className="answered-window-wrapper">
+          Získals 10 bodů
           <img
             src={otazka.odmena.obrazek}
             alt={currentUserData.currentGame.question.answered.odpoved}

@@ -19,6 +19,7 @@ export const Game = () => {
             active: false,
           },
           ended: false,
+          points: 0,
         };
 
         updateUserData(currentUser.uid, currentUserData);
