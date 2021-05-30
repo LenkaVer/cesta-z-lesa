@@ -27,8 +27,14 @@ export const Level = (props) => {
             () => Math.random() - 0.5,
           ),
           answered: null,
+          hintUsed: false,
         },
       };
+      currentUserData.currentGame.question.question.odpovedi.forEach(
+        (odpoved) => {
+          odpoved.disabled = false;
+        },
+      );
     } else {
       currentUserData.currentGame.ended = true;
     }

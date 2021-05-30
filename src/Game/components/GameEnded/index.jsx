@@ -37,7 +37,7 @@ export const GameEnded = () => {
         <p>{isBestScore ? 'Je to tvoje nejlepší skóre' : null}</p>
 
         <div className="next">
-          <button className="btn-winners btn-next" onClick={handleClick}>
+          <button className="btn" onClick={handleClick}>
             Pokračovat
           </button>
         </div>

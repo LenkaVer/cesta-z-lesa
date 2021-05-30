@@ -15,3 +15,8 @@
 .question-box--question {
   font-weight: bold;
 }
+
+.answers {
+  display: flex;
+  flex-direction: column;
+}

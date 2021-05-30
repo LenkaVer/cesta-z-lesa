@@ -1,20 +1,20 @@
-.answers {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.answers-answer {
-  cursor: pointer;
-  width: 80%;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
+.btn.btn-answer {
+  padding: 30px;
+  font-size: 22px;
+  font-weight: bold;
   background-color: white;
+  color: black;
 }
 
-.answers-answer:hover {
-  background-color: rgb(206, 206, 206);
+.btn.btn-answer:hover,
+.btn.btn-answer:active,
+.btn.btn-answer:focus {
+  background-color: #749303;
+}
+
+.btn.btn-answer:disabled {
+  background-color: rgb(172, 169, 169);
+  border: 1px solid rgb(172, 169, 169);
+  color: white;
+  text-decoration: line-through;
 }

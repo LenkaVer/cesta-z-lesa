@@ -14,8 +14,12 @@ export const Answer = (props) => {
   };
 
   return (
-    <div onClick={handleClick} className="answers-answer">
+    <button
+      onClick={handleClick}
+      className="btn btn-answer"
+      disabled={props.disabled}
+    >
       {props.nazev}
-    </div>
+    </button>
   );
 };
