@@ -18,7 +18,7 @@ export const Question = () => {
     <Answered />
   ) : (
     <div className="question">
-      <div className="question question-box--question">
+      <div className="question-box question-box--question">
         <p>{otazka.otazka}</p>
         <Audio soubor={otazka.soubor} />
       </div>

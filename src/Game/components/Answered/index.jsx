@@ -4,7 +4,7 @@ import { questions } from './../../questions';
 import wrongAnswer from './Fail-cross.png';
 import './style.css';
 
-export const Answered = (props) => {
+export const Answered = () => {
   const { currentUserData, currentUser, updateUserData } = useAuth();
 
   const handleClick = () => {

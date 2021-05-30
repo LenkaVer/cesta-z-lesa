@@ -3,6 +3,7 @@ import { useAuth } from './../Auth/AuthContext';
 import { MainMap } from './components/MainMap';
 import { Levels } from './components/Levels/';
 import { Question } from './components/Question';
+import { GameEnded } from './components/GameEnded';
 import './style.css';
 
 export const Game = () => {
@@ -17,7 +18,9 @@ export const Game = () => {
           question: {
             active: false,
           },
+          ended: false,
         };
+
         updateUserData(currentUser.uid, currentUserData);
       }
     }
@@ -28,8 +31,10 @@ export const Game = () => {
       {currentUserData && currentUserData.currentGame ? (
         <div className="game" ref={gameRef}>
           <div className="game-inner">
-            <MainMap />
-            {currentUserData.currentGame.question.active ? (
+            {currentUserData.currentGame.ended ? null : <MainMap />}
+            {currentUserData.currentGame.ended ? (
+              <GameEnded />
+            ) : currentUserData.currentGame.question.active ? (
               <Question />
             ) : (
               <Levels gameRef={gameRef} />

@@ -12,22 +12,26 @@ export const Level = (props) => {
   const { currentUser, currentUserData, updateUserData } = useAuth();
 
   const handleClick = () => {
-    const questionIndex = Math.floor(
-      Math.random() * questions[props.level].length,
-    );
+    if (currentUserData.currentGame.levels.length !== questions.length) {
+      const questionIndex = Math.floor(
+        Math.random() * questions[props.level].length,
+      );
 
-    currentUserData.currentGame.question = {
-      active: true,
-      question: {
-        level: props.level,
-        index: questionIndex,
-        otazka: questions[props.level][questionIndex].otazka,
-        odpovedi: questions[props.level][questionIndex].odpovedi.sort(
-          () => Math.random() - 0.5,
-        ),
-        answered: null,
-      },
-    };
+      currentUserData.currentGame.question = {
+        active: true,
+        question: {
+          level: props.level,
+          index: questionIndex,
+          otazka: questions[props.level][questionIndex].otazka,
+          odpovedi: questions[props.level][questionIndex].odpovedi.sort(
+            () => Math.random() - 0.5,
+          ),
+          answered: null,
+        },
+      };
+    } else {
+      currentUserData.currentGame.ended = true;
+    }
 
     updateUserData(currentUser.uid, currentUserData);
   };
@@ -55,7 +59,7 @@ export const Level = (props) => {
             ? currentUserData.currentGame.levels[props.level].correct
               ? correctImg
               : wrongImg
-            : currentUserData.currentGame.levels.length === 10
+            : currentUserData.currentGame.levels.length === questions.length
             ? homeImg
             : questionImg
         }

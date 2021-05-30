@@ -19,7 +19,7 @@ export const Audio = (props) => {
     setAudioStatus('Pause');
   };
 
-  const handleTimeUpdate = (event) => {
+  const handleTimeUpdate = () => {
     setDelka(audioRef.current.duration);
     setAktualniCas(audioRef.current.currentTime);
   };
