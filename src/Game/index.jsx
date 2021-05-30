@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useAuth } from './../Auth/AuthContext';
 import { MainMap } from './components/MainMap';
+import { Levels } from './components/Levels/';
+import { Question } from './components/Question';
 import './style.css';
 
 export const Game = () => {
@@ -27,6 +29,11 @@ export const Game = () => {
         <div className="game" ref={gameRef}>
           <div className="game-inner">
             <MainMap />
+            {currentUserData.currentGame.question.active ? (
+              <Question />
+            ) : (
+              <Levels gameRef={gameRef} />
+            )}
           </div>
         </div>
       ) : null}

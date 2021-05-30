@@ -1,0 +1,20 @@
+.answers {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.answers-answer {
+  cursor: pointer;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: white;
+}
+
+.answers-answer:hover {
+  background-color: rgb(206, 206, 206);
+}
