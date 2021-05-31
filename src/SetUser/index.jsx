@@ -1,19 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 export const SetUser = () => {
   return (
     <>
-      <div className="base_form_wrapper">
-        <Link className="link" to="/login">
+      <div className="homepage-navigation">
+        <Link className="btn btn-homepage" to="/login">
           Přihlásit se
         </Link>
-        <Link className="link" to="/signup">
+        <Link className="btn btn-homepage" to="/signup">
           Registrovat se
         </Link>
-        <Link className="link" to="/signup-anonymous">
+        <Link className="btn btn-homepage" to="/signup-anonymous">
           Pokračovat bez registrace
         </Link>
+        <div className="explanation-user-setup">
+          <p>
+            Přihlášení uživatelé si mohou na svém profilu zobrazit dosažené body
+            za odehrané hry.
+          </p>
+          <p>
+            Pokud správně uhodnou zvíře z nahrávky, získavají informace o
+            zvířeti (obrázek a zajímavost) do své galerie, kterou si mohou na
+            profilu prohlížet. Mouhou tak získat galerii 48 zvířat.
+          </p>
+        </div>
       </div>
     </>
   );

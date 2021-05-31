@@ -1,4 +1,15 @@
 .homepage {
   text-align: center;
-  margin-top: 5rem;
+  max-width: 30rem;
+  margin: 5rem auto;
+}
+
+.homepage-text {
+  border: 1px solid #05171f;
+  border-radius: 10px;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.homepage-text p {
+  margin-top: 0;
 }

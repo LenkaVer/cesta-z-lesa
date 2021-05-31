@@ -8,6 +8,7 @@ body {
   background-image: url('./images/backbround.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  color: #05171f;
 }
 
 .main {
@@ -20,7 +21,7 @@ body {
   border-radius: 20px;
   box-shadow: 7px 8px 26px 0px rgba(255, 255, 255, 0.6);
   max-width: 1400px;
-  border: 2px solid black;
+  border: 2px solid #05171f;
 }
 
 .base_form_wrapper {
