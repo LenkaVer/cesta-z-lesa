@@ -23,6 +23,11 @@ export const GameEnded = () => {
     if (isBestScore) {
       currentUserData.bestScore = currentUserData.currentGame.points;
     }
+    {
+      isWinning
+        ? (currentUserData.countWins += 1)
+        : (currentUserData.countLosses += 1);
+    }
     currentUserData.currentGame = null;
     updateUserData(currentUser.uid, currentUserData);
     history.push('/top-winners');

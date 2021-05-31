@@ -15,8 +15,9 @@ export const Question = () => {
     ];
   const handleClickHint = () => {
     currentUserData.currentGame.question.question.hintUsed = true;
+    currentUserData.currentGame.hints -= 1;
 
-    const newArray = [];
+    const questionsAfterHint = [];
     const random = Math.floor(Math.random() * 3);
     let count = 0;
     currentUserData.currentGame.question.question.odpovedi.forEach(
@@ -31,10 +32,10 @@ export const Question = () => {
           count += 1;
         }
         odpoved.disabled = disable;
-        newArray.push(odpoved);
+        questionsAfterHint.push(odpoved);
       },
     );
-    currentUserData.currentGame.question.question.odpovedi = newArray;
+    currentUserData.currentGame.question.question.odpovedi = questionsAfterHint;
 
     updateUserData(currentUser.uid, currentUserData);
   };
@@ -46,17 +47,14 @@ export const Question = () => {
       <div className="question-box question-box--question">
         <p>{otazka.otazka}</p>
         <Audio soubor={otazka.soubor} />
-        <div
-          style={{
-            display: currentUserData.currentGame.question.question.hintUsed
-              ? 'none'
-              : 'block',
-          }}
-        >
-          <button className="btn" onClick={handleClickHint}>
-            Nápověda
-          </button>
-        </div>
+        {!currentUserData.currentGame.question.question.hintUsed &&
+        currentUserData.currentGame.hints > 0 ? (
+          <div>
+            <button className="btn" onClick={handleClickHint}>
+              Nápověda
+            </button>
+          </div>
+        ) : null}
       </div>
       <div className="question-box question-box--answer">
         <div className="answers">

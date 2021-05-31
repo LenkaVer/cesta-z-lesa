@@ -13,11 +13,19 @@ export const Answered = () => {
     );
     if (currentUserData.currentGame.question.answered.correct) {
       if (currentUserData.currentGame.question.question.hintUsed) {
-        currentUserData.currentGame.points += 3;
+        currentUserData.currentGame.points += 5;
       } else {
         currentUserData.currentGame.points += 10;
       }
+    } else {
+      currentUserData.currentGame.lives -= 1;
+
+      if (currentUserData.currentGame.lives === 0) {
+        currentUserData.currentGame.ended = true;
+        currentUserData.currentGame.points = 0;
+      }
     }
+
     currentUserData.currentGame.question = {
       active: false,
       answered: null,
