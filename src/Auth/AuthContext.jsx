@@ -29,6 +29,7 @@ export const AuthProvider = ({ children }) => {
         bestScore: 0,
         countWins: 0,
         countLosses: 0,
+        rewards: [],
       })
       .then(() => {
         //console.log('Document successfully written!');

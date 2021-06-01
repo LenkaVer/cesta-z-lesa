@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAuth } from './../Auth/AuthContext';
 import { MainMap } from './components/MainMap';
 import { Levels } from './components/Levels/';
@@ -7,11 +7,21 @@ import { GameEnded } from './components/GameEnded';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
+import { questions } from './questions';
 import './style.css';
 
 export const Game = () => {
   const gameRef = useRef();
   const { currentUser, currentUserData, updateUserData } = useAuth();
+  const [questionsCount, setQuestionsCount] = useState(0);
+
+  useEffect(() => {
+    let count = 0;
+    questions.forEach((level) => {
+      count += level.length;
+    });
+    setQuestionsCount(count);
+  }, []);
 
   useEffect(() => {
     if (currentUserData) {
@@ -64,6 +74,9 @@ export const Game = () => {
             <p> {currentUserData.currentGame.points} Bodů</p>
             <p>{lives}</p>
             <p>{hints}</p>
+            <p>
+              {currentUserData.rewards.length}/{questionsCount}
+            </p>
           </div>
         </>
       ) : null}

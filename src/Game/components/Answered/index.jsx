@@ -8,14 +8,24 @@ export const Answered = () => {
   const { currentUserData, currentUser, updateUserData } = useAuth();
 
   const handleClick = () => {
-    currentUserData.currentGame.levels.push(
-      currentUserData.currentGame.question.answered,
-    );
     if (currentUserData.currentGame.question.answered.correct) {
       if (currentUserData.currentGame.question.question.hintUsed) {
         currentUserData.currentGame.points += 5;
       } else {
         currentUserData.currentGame.points += 10;
+      }
+      if (
+        !currentUserData.rewards.some((reward) => {
+          return (
+            reward.level === currentUserData.currentGame.levels.length &&
+            reward.index === currentUserData.currentGame.question.question.index
+          );
+        })
+      ) {
+        currentUserData.rewards.push({
+          level: currentUserData.currentGame.levels.length,
+          index: currentUserData.currentGame.question.question.index,
+        });
       }
     } else {
       currentUserData.currentGame.lives -= 1;
@@ -26,6 +36,9 @@ export const Answered = () => {
       }
     }
 
+    currentUserData.currentGame.levels.push(
+      currentUserData.currentGame.question.answered,
+    );
     currentUserData.currentGame.question = {
       active: false,
       answered: null,
