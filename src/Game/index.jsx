@@ -75,6 +75,7 @@ export const Game = () => {
             <p>{lives}</p>
             <p>{hints}</p>
             <p>
+              Odměny:
               {currentUserData.rewards.length}/{questionsCount}
             </p>
           </div>
