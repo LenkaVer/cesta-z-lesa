@@ -18,16 +18,15 @@ export const GameEnded = () => {
     setIsWinning(
       currentUserData.currentGame.levels.length === questions.length,
     );
-  }, []);
+  }, [currentUserData]);
   const handleClick = () => {
     if (isBestScore) {
       currentUserData.bestScore = currentUserData.currentGame.points;
     }
-    {
-      isWinning
-        ? (currentUserData.countWins += 1)
-        : (currentUserData.countLosses += 1);
-    }
+    isWinning
+      ? (currentUserData.countWins += 1)
+      : (currentUserData.countLosses += 1);
+
     currentUserData.currentGame = null;
     updateUserData(currentUser.uid, currentUserData);
     history.push('/top-winners');

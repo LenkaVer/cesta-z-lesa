@@ -22,7 +22,7 @@ export const Profile = () => {
     <>
       <div className="base_form_wrapper">
         <div>
-          <h2 className="text-center mb-4">Profil</h2>
+          <h2>Profil</h2>
           {error && <div>{error}</div>}
           <strong>Email:</strong> {currentUser.email}
           <Link to="/update-profile">Upravit profil</Link>
