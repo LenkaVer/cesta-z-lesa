@@ -6,19 +6,19 @@ export const SetUser = () => {
   return (
     <>
       <div className="homepage-navigation">
-        <Link className="btn btn-homepage" to="/login">
-          Přihlásit se
-        </Link>
         <Link className="btn btn-homepage" to="/signup">
           Registrovat se
+        </Link>
+        <Link className="btn btn-homepage" to="/login">
+          Přihlásit se
         </Link>
         <Link className="btn btn-homepage" to="/signup-anonymous">
           Pokračovat bez registrace
         </Link>
         <div className="explanation-user-setup">
           <p>
-            Přihlášení uživatelé si mohou na svém profilu zobrazit dosažené body
-            za odehrané hry a mohou se k rozehrané hře vrátit z různých
+            Registrovaní uživatelé si mohou na svém profilu zobrazit dosažené
+            body za odehrané hry a mohou se k rozehrané hře vrátit z různých
             zařízení.
           </p>
           <p>

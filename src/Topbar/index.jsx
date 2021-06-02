@@ -25,7 +25,6 @@ export const Topbar = () => {
 
   return (
     <div className="base_form_wrapper">
-      <h1 style={{ textAlign: 'center', color: '#1f6101' }}>Cesta z lesa</h1>
       {error ? <div>{error}</div> : null}
       {currentUser && currentUserData ? (
         <>

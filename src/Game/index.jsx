@@ -5,7 +5,7 @@ import { Levels } from './components/Levels/';
 import { Question } from './components/Question';
 import { GameEnded } from './components/GameEnded';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
 import { questions } from './questions';
 import './style.css';
@@ -67,11 +67,11 @@ export const Game = () => {
               )}
             </div>
           </div>
-          <div
-            className="user-stats"
-            style={{ position: 'absolute', right: '20px', top: '20px' }}
-          >
-            <p> {currentUserData.currentGame.points} Bodů</p>
+          <div className="user-stats">
+            <p>
+              <FontAwesomeIcon icon={faTrophy} />
+              {currentUserData.currentGame.points}
+            </p>
             <p>{lives}</p>
             <p>{hints}</p>
             <p>
