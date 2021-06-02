@@ -1,4 +1,10 @@
 import React, { useState, useRef } from 'react';
+import {
+  faPlayCircle,
+  faPauseCircle,
+  faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './style.css';
 
 export const Audio = (props) => {
@@ -14,10 +20,15 @@ export const Audio = (props) => {
       audioRef.current.pause();
     }
   };
-  const handleStartAudio = () => {
-    audioRef.current.play();
-    setAudioStatus('Pause');
-  };
+
+  async function handleStartAudio() {
+    try {
+      await audioRef.current.play();
+      setAudioStatus('pause');
+    } catch (e) {
+      setAudioStatus('play');
+    }
+  }
 
   const handleTimeUpdate = () => {
     setDelka(audioRef.current.duration);
@@ -32,21 +43,41 @@ export const Audio = (props) => {
         src={props.soubor}
         onLoadedMetadata={handleStartAudio}
         onTimeUpdate={handleTimeUpdate}
-        onPlay={() => setAudioStatus('Pause')}
-        onPause={() => setAudioStatus('Play')}
-        onEnded={() => setAudioStatus('Play')}
+        onPlay={() => setAudioStatus('pause')}
+        onPause={() => setAudioStatus('play')}
+        onEnded={() => setAudioStatus('play')}
       ></audio>
-      <button className="btn-audio" onClick={handleToggleAudio}>
-        <div className="audio-status">{audioStatus}</div>
+      <div
+        style={{
+          width: '80%',
+          border: '1px solid #05171f',
+          borderRadius: '10px',
+          margin: 'auto',
+        }}
+      >
         <div
           style={{
             backgroundColor: 'green',
             width: `${(aktualniCas / delka) * 100}%`,
-            height: '100%',
+            height: '10px',
+
             color: 'white',
             borderRadius: '10px',
           }}
         ></div>
+      </div>
+      <button className="btn-audio" onClick={handleToggleAudio}>
+        <FontAwesomeIcon
+          icon={
+            audioStatus === 'play'
+              ? faPlayCircle
+              : audioStatus === 'pause'
+              ? faPauseCircle
+              : faSpinner
+          }
+          spin={audioStatus === 'loading' ? true : false}
+          size="3x"
+        />
       </button>
     </>
   );

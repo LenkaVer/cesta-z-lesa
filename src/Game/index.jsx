@@ -67,6 +67,7 @@ export const Game = () => {
               )}
             </div>
           </div>
+          <div className="user-menu"></div>
           <div className="user-stats">
             <p>
               <FontAwesomeIcon icon={faTrophy} />
