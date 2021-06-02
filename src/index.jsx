@@ -6,6 +6,7 @@ import { AuthProvider } from './Auth/AuthContext';
 import { Home } from './Home';
 import { Profile } from './Profile';
 import { Login } from './Login';
+import { Collection } from './Collection';
 import { Game } from './Game';
 import { TopWinners } from './TopWinners';
 import { UpdateProfile } from './UpdateProfile';
@@ -24,15 +25,20 @@ function App() {
         <main className="main">
           <Switch>
             <Route exact path="/" component={Home} />
-            <PrivateRoute path="/profile" component={Profile} />
-            <Route path="/login" component={Login} />
-            <PrivateRoute path="/game" component={Game} />
+            <Route exact path="/set-user" component={SetUser} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/forgot-password" component={ForgotPassword} />
+            <Route exact path="/signup-anonymous" component={SignupAnonymous} />
             <Route exact path="/top-winners" component={TopWinners} />
-            <PrivateRoute path="/update-profile" component={UpdateProfile} />
-            <Route path="/set-user" component={SetUser} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/signup-anonymous" component={SignupAnonymous} />
-            <Route path="/forgot-password" component={ForgotPassword} />
+            <PrivateRoute exact path="/game" component={Game} />
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <PrivateRoute
+              exact
+              path="/update-profile"
+              component={UpdateProfile}
+            />
+            <PrivateRoute exact path="/collection" component={Collection} />
           </Switch>
         </main>
       </Router>
