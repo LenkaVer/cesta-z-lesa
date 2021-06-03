@@ -15,6 +15,7 @@ import { ForgotPassword } from './ForgotPassword';
 import { Menu } from './Menu';
 import { SignupAnonymous } from './SignupAnonymous';
 import { SetUser } from './SetUser';
+import { Credits } from './Credits';
 import { CollectionItem } from './CollectionItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -41,6 +42,7 @@ function App() {
                 component={SignupAnonymous}
               />
               <Route exact path="/top-winners" component={TopWinners} />
+              <Route exact path="/credits" component={Credits} />
               <PrivateRoute exact path="/game" component={Game} />
               <PrivateRoute exact path="/profile" component={Profile} />
               <PrivateRoute
@@ -57,8 +59,8 @@ function App() {
             </Switch>
           )}
           <button
+            className="btn-navigation"
             onClick={() => setMenuActive(!menuActive)}
-            style={{ position: 'absolute', top: '10px', left: '20px' }}
           >
             <FontAwesomeIcon icon={faBars} size="2x" />
           </button>

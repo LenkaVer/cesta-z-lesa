@@ -44,7 +44,7 @@ export const TopWinners = () => {
         </div>
         <div className="next">
           <Link className="btn" to="/game">
-            Hrát znovu
+            Hrát
           </Link>
         </div>
       </div>

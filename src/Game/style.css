@@ -32,8 +32,20 @@
   position: absolute;
   right: 20px;
   top: 10px;
+  text-align: right;
 }
 
 .user-stats p {
+  margin: 0.6rem;
+}
+
+.user-collection {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  text-align: right;
+}
+
+.user-collection p {
   margin: 0.6rem;
 }

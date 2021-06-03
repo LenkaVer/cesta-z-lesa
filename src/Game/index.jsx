@@ -67,17 +67,19 @@ export const Game = () => {
               )}
             </div>
           </div>
-          <div className="user-menu"></div>
+
           <div className="user-stats">
             {currentUserData.username}
+            <p>{lives}</p>
+            <p>{hints}</p>
+          </div>
+          <div className="user-collection">
             <p>
               <FontAwesomeIcon icon={faTrophy} />
               {currentUserData.currentGame.points}
             </p>
-            <p>{lives}</p>
-            <p>{hints}</p>
             <p>
-              Odměny:
+              Kolekce:
               {currentUserData.rewards.length}/{questionsCount}
             </p>
           </div>

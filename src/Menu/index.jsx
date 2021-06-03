@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../Auth/AuthContext';
 import { useHistory } from 'react-router-dom';
+import './style.css';
 
 export const Menu = (props) => {
   const { currentUser, currentUserData, logout, updateUserData } = useAuth();
@@ -30,6 +31,10 @@ export const Menu = (props) => {
     history.push('/collection');
   };
 
+  const handleTopWinners = () => {
+    props.setMenuActive(false);
+    history.push('/top-winners');
+  };
   const handleRegistration = () => {
     props.setMenuActive(false);
     history.push('/signup');
@@ -39,16 +44,22 @@ export const Menu = (props) => {
     props.setMenuActive(false);
     history.push('/login');
   };
+
   const handleSignupAnonymous = () => {
     props.setMenuActive(false);
     history.push('/signup-anonymous');
+  };
+
+  const handleCredits = () => {
+    props.setMenuActive(false);
+    history.push('/credits');
   };
 
   return (
     <nav className="navigation">
       {currentUser && currentUserData ? (
         <>
-          <div>
+          <div className="username">
             {currentUserData.username} ({currentUserData.points})
           </div>
           <ul>
@@ -63,10 +74,21 @@ export const Menu = (props) => {
               </button>
             </li>
             <li>
+              <button className="btn" onClick={handleTopWinners}>
+                Nejlepší hráči
+              </button>
+            </li>
+            <li>
+              <button className="btn" onClick={handleCredits}>
+                Zdroje
+              </button>
+            </li>
+            <li>
               <button className="btn" onClick={handleLogout}>
                 Odhlásit se
               </button>
             </li>
+            {error && <div>{error}</div>}
           </ul>
         </>
       ) : (
@@ -87,7 +109,14 @@ export const Menu = (props) => {
             </button>
           </li>
           <li>
-            <button className="btn">Zdroje</button>
+            <button className="btn" onClick={handleTopWinners}>
+              Nejlepší hráči
+            </button>
+          </li>
+          <li>
+            <button className="btn" onClick={handleCredits}>
+              Zdroje
+            </button>
           </li>
         </ul>
       )}
