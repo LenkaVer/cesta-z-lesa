@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from './../Auth/AuthContext';
 import { collection } from './../Game/questions';
 import mysteryImg from './Mystery.png';
