@@ -69,6 +69,7 @@ export const Game = () => {
           </div>
           <div className="user-menu"></div>
           <div className="user-stats">
+            {currentUserData.username}
             <p>
               <FontAwesomeIcon icon={faTrophy} />
               {currentUserData.currentGame.points}
