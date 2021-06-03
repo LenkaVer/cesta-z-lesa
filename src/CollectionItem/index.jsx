@@ -3,6 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useAuth } from './../Auth/AuthContext';
 import { collection } from './../Game/questions';
 import { Audio } from './../Game/components/Audio';
+import './style.css';
 
 export const CollectionItem = () => {
   const { currentUserData } = useAuth();
@@ -32,24 +33,29 @@ export const CollectionItem = () => {
       }
     }
   }, [currentUserData, history, level, index]);
+
+  const handleCollection = () => {
+    history.push('/collection');
+  };
   return item ? (
     <div>
-      <h5>
-        {item.level} {item.index} {item.titulek}
-      </h5>
+      <button className="btn btn-back-collection" onClick={handleCollection}>
+        Zpět do kolekce
+      </button>
+      <div className="collection-inner">
+        <div className="collection-inner__animal">
+          <h4 className="collection-inner__animal-title">{item.titulek}</h4>
 
-      <div
-        style={{
-          width: '140px',
-          height: '100px',
-          backgroundImage: `url(${item.obrazek})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-        }}
-      ></div>
-
-      <p>{item.zajimavost}</p>
-      <Audio soubor={item.zvuk} />
+          <div
+            className="collection-inner__animal-img"
+            style={{ backgroundImage: `url(${item.obrazek})` }}
+          ></div>
+        </div>
+        <div>
+          <p>{item.zajimavost}</p>
+          <Audio soubor={item.zvuk} />
+        </div>
+      </div>
     </div>
   ) : null;
 };

@@ -1,0 +1,20 @@
+.collection-inner {
+  margin: 0 auto;
+  width: 70vw;
+  display: flex;
+}
+
+.collection-inner__animal {
+  text-align: center;
+}
+.btn-back-collection {
+  margin-left: 4.5rem;
+  margin-top: -2rem;
+}
+
+.collection-inner__animal-img {
+  background-size: cover;
+  background-position: center center;
+  width: 400px;
+  height: 40vh;
+}

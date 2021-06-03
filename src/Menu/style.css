@@ -1,3 +1,22 @@
-.username {
-  margin-top: 4rem;
+.navigation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation__menu {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 0px;
+  padding: 10px;
+}
+
+.navigation__menu .btn {
+  display: block;
+  width: 100%;
 }

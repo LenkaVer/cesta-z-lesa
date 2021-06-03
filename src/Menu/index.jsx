@@ -59,10 +59,8 @@ export const Menu = (props) => {
     <nav className="navigation">
       {currentUser && currentUserData ? (
         <>
-          <div className="username">
-            {currentUserData.username} ({currentUserData.points})
-          </div>
-          <ul>
+          <h3>{currentUserData.username}</h3>
+          <ul className="navigation__menu">
             <li>
               <button className="btn" onClick={handleCollection}>
                 Kolekce
@@ -92,7 +90,7 @@ export const Menu = (props) => {
           </ul>
         </>
       ) : (
-        <ul>
+        <ul className="navigation__menu">
           <li>
             <button className="btn" onClick={handleRegistration}>
               Registrovat se

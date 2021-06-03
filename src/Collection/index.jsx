@@ -1,54 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from './../Auth/AuthContext';
 import { collection } from './../Game/questions';
-
 import mysteryImg from './Mystery.png';
+import './style.css';
 
 export const Collection = () => {
   const { currentUserData } = useAuth();
+  const history = useHistory();
 
   return currentUserData ? (
-    <div>
-      <h2>
+    <div className="collection">
+      <h2 className="collection__title">
         Kolekce {currentUserData.rewards.length}/{collection.length}
       </h2>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignContent: 'space-around',
-        }}
-      >
+      <div className="collection__items">
         {collection.map((item, index) => {
           return currentUserData.rewards.some(
             (reward) =>
               reward.level === item.level && reward.index === item.index,
           ) ? (
-            <div key={index}>
-              <h5>{item.titulek}</h5>
-              <Link to={`/collection-item/${item.level}/${item.index}`}>
-                <div
-                  style={{
-                    width: '140px',
-                    height: '100px',
-                    backgroundImage: `url(${item.obrazek})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                  }}
-                ></div>
-              </Link>
+            <div
+              className="collection-item collection-item--collected"
+              key={index}
+            >
+              <div
+                onClick={() =>
+                  history.push(`/collection-item/${item.level}/${item.index}`)
+                }
+                className="collection-item__image"
+                style={{ backgroundImage: `url(${item.obrazek})` }}
+              >
+                <h5 className="collection-item__title">{item.titulek}</h5>
+              </div>
             </div>
           ) : (
-            <div
-              style={{
-                width: '140px',
-                height: '100px',
-                backgroundImage: `url(${mysteryImg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center',
-              }}
-            ></div>
+            <div className="collection-item" key={index}>
+              <div
+                className="collection-item__image"
+                style={{ backgroundImage: `url(${mysteryImg})` }}
+              ></div>
+            </div>
           );
         })}
       </div>
