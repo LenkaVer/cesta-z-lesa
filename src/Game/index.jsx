@@ -45,7 +45,12 @@ export const Game = () => {
   const hints = [];
   if (currentUserData && currentUserData.currentGame) {
     for (let i = 0; i < currentUserData.currentGame.lives; i += 1) {
-      lives.push(<FontAwesomeIcon icon={faHeart} style={{ color: 'red' }} />);
+      lives.push(
+        <FontAwesomeIcon
+          icon={faHeart}
+          style={{ color: 'red', marginLeft: '5px' }}
+        />,
+      );
     }
     for (let i = 0; i < currentUserData.currentGame.hints; i += 1) {
       hints.push(<FontAwesomeIcon icon={faEarlybirds} />);

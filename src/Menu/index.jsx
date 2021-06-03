@@ -26,6 +26,11 @@ export const Menu = (props) => {
     history.push('/game');
   };
 
+  const handleProfile = () => {
+    props.setMenuActive(false);
+    history.push('/profile');
+  };
+
   const handleCollection = () => {
     props.setMenuActive(false);
     history.push('/collection');
@@ -61,6 +66,11 @@ export const Menu = (props) => {
         <>
           <h3>{currentUserData.username}</h3>
           <ul className="navigation__menu">
+            <li>
+              <button className="btn" onClick={handleProfile}>
+                Profil
+              </button>
+            </li>
             <li>
               <button className="btn" onClick={handleCollection}>
                 Kolekce
