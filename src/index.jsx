@@ -15,6 +15,7 @@ import { ForgotPassword } from './ForgotPassword';
 import { Topbar } from './Topbar';
 import { SignupAnonymous } from './SignupAnonymous';
 import { SetUser } from './SetUser';
+import { CollectionItem } from './CollectionItem';
 import './style.css';
 
 function App() {
@@ -39,6 +40,11 @@ function App() {
               component={UpdateProfile}
             />
             <PrivateRoute exact path="/collection" component={Collection} />
+            <PrivateRoute
+              exact
+              path="/collection-item/:level/:index"
+              component={CollectionItem}
+            />
           </Switch>
         </main>
       </Router>

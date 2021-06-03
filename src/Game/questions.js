@@ -1459,3 +1459,21 @@ export const questions = [
     },
   ],
 ];
+
+export const collection = [];
+questions.forEach((level, levelIndex) => {
+  level.forEach((question, questionIndex) => {
+    collection.push({
+      titulek: question.odpovedi
+        .filter((odpoved) => {
+          return odpoved.spravne;
+        })
+        .pop().nazev,
+      zajimavost: question.odmena.zajimavost,
+      obrazek: question.odmena.obrazek,
+      zvuk: question.soubor,
+      level: levelIndex,
+      index: questionIndex,
+    });
+  });
+});
