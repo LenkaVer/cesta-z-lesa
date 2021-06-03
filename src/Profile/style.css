@@ -45,3 +45,10 @@
 .bold {
   font-weight: bold;
 }
+
+.clicable {
+  cursor: pointer;
+}
+.clicable:hover {
+  text-decoration: underline;
+}

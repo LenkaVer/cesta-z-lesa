@@ -19,6 +19,9 @@ export const Profile = () => {
       setError('Failed to log out');
     }
   }
+  const handleClick = () => {
+    history.push('/collection');
+  };
 
   return currentUserData ? (
     <div className="user-profile">
@@ -48,7 +51,7 @@ export const Profile = () => {
               <span className="losses">{currentUserData.countLosses}</span>)
             </td>
           </tr>
-          <tr>
+          <tr className="clicable" onClick={handleClick}>
             <th>Počet zvířat v kolekci</th>
             <td>
               {currentUserData.rewards.length}/{collection.length}
