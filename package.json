@@ -1,6 +1,6 @@
 {
-  "name": "zvirata-demo4",
-  "version": "0.1.0",
+  "name": "lesni-stezka",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",

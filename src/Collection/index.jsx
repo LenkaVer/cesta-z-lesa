@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './../Auth/AuthContext';
 import { collection } from './../Game/questions';
-import { Audio } from './../Game/components/Audio';
+
 import mysteryImg from './Mystery.png';
 
 export const Collection = () => {
@@ -10,7 +10,9 @@ export const Collection = () => {
 
   return currentUserData ? (
     <div>
-      <h2> Kolekce </h2>
+      <h2>
+        Kolekce {currentUserData.rewards.length}/{collection.length}
+      </h2>
       <div
         style={{
           display: 'flex',

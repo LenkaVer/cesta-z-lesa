@@ -31,7 +31,7 @@ export const CollectionItem = () => {
         history.push('/collection');
       }
     }
-  }, [currentUserData, level, index]);
+  }, [currentUserData, history, level, index]);
   return item ? (
     <div>
       <h5>
