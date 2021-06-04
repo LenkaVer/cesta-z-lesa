@@ -53,10 +53,10 @@ export const Answered = () => {
     ];
 
   return (
-    <div>
+    <div className="">
       {currentUserData.currentGame.question.answered.correct ? (
         <div className="answered-window-wrapper">
-          Získals{' '}
+          Získals
           {currentUserData.currentGame.question.question.hintUsed ? 5 : 10} bodů
           <img
             src={otazka.odmena.obrazek}

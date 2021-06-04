@@ -33,6 +33,7 @@ body {
   max-width: 1400px;
   border: 2px solid #05171f;
   overflow: auto;
+  position: relative;
 }
 
 .base_form_wrapper {
