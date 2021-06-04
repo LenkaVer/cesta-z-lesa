@@ -26,7 +26,7 @@ export const TopWinners = () => {
   }, []);
 
   return (
-    <div className="top-winners">
+    <div className="top-winners overflow">
       <table className="top-winners__table">
         <thead>
           <tr>

@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <>
       <div className="homepage">
-        <h3 className="pre-title">Vítej na stránce zábavně vzdělávací hry</h3>
+        <h3 className="pre-title ">Vítej na stránce zábavně vzdělávací hry</h3>
         <h1 className="title">Lesní stezka</h1>
         <div className="homepage-text">
           <p>

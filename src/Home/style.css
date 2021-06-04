@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
 
 .homepage {
-  text-align: center;
-  max-width: 40rem;
-  margin: 2rem auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .homepage-text {
@@ -11,6 +14,7 @@
   border-radius: 10px;
   text-align: left;
   padding: 1rem 1rem 0rem 1rem;
+  max-width: 70%;
 }
 
 .homepage-text p {
@@ -19,6 +23,7 @@
 
 .pre-title {
   color: #1f6101;
+  text-align: center;
 }
 
 .title {
@@ -26,4 +31,28 @@
   font-size: 3rem;
   margin: 1rem;
   color: #1f6101;
+}
+
+@media (max-width: 1100px) {
+  .pre-title {
+    margin-top: 7rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .pre-title {
+    margin-top: 17rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .pre-title {
+    margin-top: 25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .pre-title {
+    margin-top: 30rem;
+  }
 }

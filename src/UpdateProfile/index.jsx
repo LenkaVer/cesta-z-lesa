@@ -45,7 +45,10 @@ export const UpdateProfile = () => {
       <div className="base_form_wrapper">
         <h2>Upravit profil</h2>
         {error && <div>{error}</div>}
-        <form className="base_form" onSubmit={handleSubmit}>
+        <form
+          className="base_form base_form--update-profile"
+          onSubmit={handleSubmit}
+        >
           <div className="base_form__box">
             <input
               type="email"
@@ -72,13 +75,16 @@ export const UpdateProfile = () => {
             <label>Potvrzení hesla</label>
           </div>
 
-          <button disabled={loading} type="submit">
+          <button className="btn" disabled={loading} type="submit">
             Změnit
           </button>
         </form>
-      </div>
-      <div>
-        <Link to="/">Cancel</Link>
+
+        <div>
+          <Link className="btn" to="/">
+            Zrušit
+          </Link>
+        </div>
       </div>
     </>
   );
