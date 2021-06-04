@@ -53,21 +53,29 @@ export const Answered = () => {
     ];
 
   return (
-    <div className="">
+    <div className="answered-window-wrapper">
       {currentUserData.currentGame.question.answered.correct ? (
-        <div className="answered-window-wrapper">
-          Získals
-          {currentUserData.currentGame.question.question.hintUsed ? 5 : 10} bodů
+        <>
+          <p>
+            Získáváš
+            {currentUserData.currentGame.question.question.hintUsed ? (
+              <span className="points"> 5 </span>
+            ) : (
+              <span className="points"> 10 </span>
+            )}
+            bodů
+          </p>
           <img
             src={otazka.odmena.obrazek}
             alt={currentUserData.currentGame.question.answered.odpoved}
           />
-          <p>{otazka.odmena.zajimavost}</p>
-        </div>
+          <h2>{currentUserData.currentGame.question.answered.odpoved}</h2>
+          <p className="animal-information">{otazka.odmena.zajimavost}</p>
+        </>
       ) : (
-        <div className="answered-window-wrapper">
+        <>
           <img src={wrongAnswer} alt={'Špatná odpověď'} />
-        </div>
+        </>
       )}
       <div className="next">
         <button className="btn-next" onClick={handleClick}>

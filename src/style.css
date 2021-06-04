@@ -24,13 +24,13 @@ body {
 }
 
 .main {
-  width: 1400px;
+  width: 1404px;
   height: 600px;
   background-color: rgba(255, 255, 255, 0.63);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 7px 8px 26px 0px rgba(255, 255, 255, 0.6);
-  max-width: 1400px;
+  max-width: 1404px;
   border: 2px solid #05171f;
   overflow: auto;
   position: relative;
