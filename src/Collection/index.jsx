@@ -10,7 +10,7 @@ export const Collection = () => {
   const history = useHistory();
 
   return currentUserData ? (
-    <div className="collection">
+    <div className="collection overflow">
       <h2 className="collection__title">
         Kolekce {currentUserData.rewards.length}/{collection.length}
       </h2>

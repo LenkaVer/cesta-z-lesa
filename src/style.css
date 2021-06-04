@@ -22,6 +22,19 @@ body {
   color: #05171f;
   font-size: 1.1rem;
 }
+.overflow {
+  overflow: auto;
+}
+.overflow::-webkit-scrollbar {
+  width: 10px;
+}
+.overflow::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.63);
+}
+.overflow::-webkit-scrollbar-thumb {
+  background: #1f6101;
+  border-radius: 10px;
+}
 
 .main {
   width: 1404px;
@@ -32,7 +45,6 @@ body {
   box-shadow: 7px 8px 26px 0px rgba(255, 255, 255, 0.6);
   max-width: 1404px;
   border: 2px solid #05171f;
-  overflow: auto;
   position: relative;
 }
 

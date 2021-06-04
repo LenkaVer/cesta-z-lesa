@@ -26,7 +26,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <main className="main">
+        <main className="main overflow">
           {menuActive ? (
             <Menu setMenuActive={setMenuActive} />
           ) : (
