@@ -34,25 +34,14 @@
 }
 
 @media (max-width: 1100px) {
-  .pre-title {
-    margin-top: 7rem;
+  .homepage {
+    padding-top: 5rem;
   }
 }
 
 @media (max-width: 720px) {
-  .pre-title {
-    margin-top: 17rem;
-  }
-}
-
-@media (max-width: 510px) {
-  .pre-title {
-    margin-top: 25rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .pre-title {
-    margin-top: 30rem;
+  .homepage {
+    justify-content: flex-start;
+    padding-top: 5rem;
   }
 }

@@ -7,14 +7,17 @@
   align-items: center;
   padding: 3rem;
 }
-
-.explanation-user-setup {
+.homepage-navigation__explanation {
   margin-top: 3rem;
   border: 1px solid rgba(0, 0, 0, 0.516);
   border-radius: 10px;
   padding: 0.5rem;
+  max-width: 400px;
 }
-
-.explanation-user-setup p {
+.btn.btn-homepage {
+  text-align: center;
+  display: block;
+}
+.homepage-navigation__explanation p {
   margin: 0.5rem;
 }
