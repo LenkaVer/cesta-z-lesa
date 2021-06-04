@@ -45,7 +45,7 @@ export const CollectionItem = () => {
         className="btn-navigation btn-navigation--collection"
         onClick={handleCollection}
       >
-        <FontAwesomeIcon icon={faArrowCircleLeft} size="2x" />
+        <FontAwesomeIcon icon={faArrowCircleLeft} size="3x" />
       </button>
       <h3 className="collection-inner-title">{item.titulek}</h3>
       <div className="collection-inner">

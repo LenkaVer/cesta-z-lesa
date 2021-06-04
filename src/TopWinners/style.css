@@ -1,6 +1,45 @@
 .top-winners {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.top-winners__table {
+  width: 50%;
+  text-align: center;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
+}
+
+.top-winners__table thead tr {
+  background-color: #1f6101;
+  color: white;
   text-align: center;
 }
+.top-winners__table thead tr:first-child {
+  border-bottom: 2px solid white;
+}
+.top-winners__table th,
+.top-winners__table td {
+  padding: 15px;
+}
+
+.top-winners__table tbody tr {
+  border-bottom: 1px solid #05171f;
+}
+
+.top-winners__table tbody tr:nth-of-type(even) {
+  background-color: #f2f2f2;
+}
+
+.top-winners__table tbody tr:last-child {
+  border-bottom: 2px solid #1f6101;
+}
+
 .winners__winner--current {
   color: red;
   font-weight: bold;

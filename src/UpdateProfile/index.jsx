@@ -42,40 +42,38 @@ export const UpdateProfile = () => {
 
   return (
     <>
-      <div>
-        <h2 className="text-center mb-4">Upravit profil</h2>
+      <div className="base_form_wrapper">
+        <h2>Upravit profil</h2>
         {error && <div>{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email
+        <form className="base_form" onSubmit={handleSubmit}>
+          <div className="base_form__box">
             <input
               type="email"
               ref={emailRef}
               required
               defaultValue={currentUser.email}
             />
-          </label>
-
-          <label>
-            Heslo
+            <label>Email</label>
+          </div>
+          <div className="base_form__box">
             <input
               type="password"
               ref={passwordRef}
               placeholder="Pro zachování hesla nechte prázdné"
             />
-          </label>
-
-          <label>
-            Potvrzení hesla
+            <label>Heslo</label>
+          </div>
+          <div className="base_form__box">
             <input
               type="password"
               ref={passwordConfirmRef}
               placeholder="Pro zachování hesla nechte prázdné"
             />
-          </label>
+            <label>Potvrzení hesla</label>
+          </div>
 
           <button disabled={loading} type="submit">
-            Update
+            Změnit
           </button>
         </form>
       </div>

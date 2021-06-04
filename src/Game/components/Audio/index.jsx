@@ -47,23 +47,10 @@ export const Audio = (props) => {
         onPause={() => setAudioStatus('play')}
         onEnded={() => setAudioStatus('play')}
       ></audio>
-      <div
-        style={{
-          width: '80%',
-          border: '1px solid #05171f',
-          borderRadius: '10px',
-          margin: 'auto',
-        }}
-      >
+      <div className="audio-bar">
         <div
-          style={{
-            backgroundColor: 'green',
-            width: `${(aktualniCas / delka) * 100}%`,
-            height: '10px',
-
-            color: 'white',
-            borderRadius: '10px',
-          }}
+          className="audio-bar--inner"
+          style={{ width: `${(aktualniCas / delka) * 100}%` }}
         ></div>
       </div>
       <button className="btn-audio" onClick={handleToggleAudio}>

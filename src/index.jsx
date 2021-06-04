@@ -62,7 +62,7 @@ function App() {
             className="btn-navigation"
             onClick={() => setMenuActive(!menuActive)}
           >
-            <FontAwesomeIcon icon={faBars} size="2x" />
+            <FontAwesomeIcon icon={faBars} size="3x" />
           </button>
         </main>
       </Router>

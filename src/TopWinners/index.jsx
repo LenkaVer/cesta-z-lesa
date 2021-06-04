@@ -26,27 +26,38 @@ export const TopWinners = () => {
   }, []);
 
   return (
-    <div>
-      <div className="top-winners">
-        <h2>Nejlepší hráči</h2>
-        <div className="winners">
-          {topTenPlayers.map((player) => {
+    <div className="top-winners">
+      <table className="top-winners__table">
+        <thead>
+          <tr>
+            <th colSpan="3">Nejlepší hráči</th>
+          </tr>
+          <tr>
+            <th>Pořadí</th>
+            <th>Přezdívka</th>
+            <th>Počet bodů</th>
+          </tr>
+        </thead>
+        <tbody>
+          {topTenPlayers.map((player, index) => {
             const playerClass =
               currentUser && currentUser.uid === player.id
                 ? 'winners__winner winners__winner--current'
                 : 'winners__winner';
             return (
-              <div key={player.id} className={playerClass}>
-                {player.username} ({player.bestScore})
-              </div>
+              <tr key={player.id} className={playerClass}>
+                <td>{index + 1}.</td>
+                <td>{player.username}</td>
+                <td>{player.bestScore}</td>
+              </tr>
             );
           })}
-        </div>
-        <div className="next">
-          <Link className="btn" to="/game">
-            Hrát
-          </Link>
-        </div>
+        </tbody>
+      </table>
+      <div className="next">
+        <Link className="btn" to="/game">
+          Hrát
+        </Link>
       </div>
     </div>
   );

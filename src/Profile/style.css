@@ -11,6 +11,7 @@
   width: 50%;
   text-align: center;
   border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
 }
 
 .user-profile__table thead tr {

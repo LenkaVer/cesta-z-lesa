@@ -7,4 +7,20 @@
   border-radius: 50%;
   border: transparent;
   background-color: transparent;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
+}
+
+.audio-bar {
+  width: 80%;
+  border: 1px solid #05171f;
+  border-radius: 10px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
+}
+
+.audio-bar--inner {
+  background-color: #1f6101;
+  height: 10px;
+  color: white;
+  border-radius: 10px;
 }
