@@ -20,7 +20,7 @@ export const Profile = () => {
           setRank(querySnapshot.docs.length + 1);
         });
     }
-  }, [currentUserData, db]);
+  }, [currentUserData]);
 
   async function handleLogout() {
     setError('');
