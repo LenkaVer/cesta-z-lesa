@@ -29,7 +29,7 @@ body {
   width: 10px;
 }
 .overflow::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.63);
+  background: transparent;
 }
 .overflow::-webkit-scrollbar-thumb {
   background: #1f6101;
@@ -38,7 +38,7 @@ body {
 
 .main {
   width: 1404px;
-  height: 600px;
+  height: 604px;
   background-color: rgba(255, 255, 255, 0.63);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -195,10 +195,14 @@ body {
   position: absolute;
   top: 10px;
   left: 20px;
+  width: 65px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
   background-color: white;
   border-radius: 5px;
-  border: 2px solid #05171f;
-  color: #05171f;
+  border: 2px solid #1f6101;
+  color: #1f6101;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
 }
 

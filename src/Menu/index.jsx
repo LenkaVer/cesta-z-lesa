@@ -26,6 +26,11 @@ export const Menu = (props) => {
     history.push('/game');
   };
 
+  const handleGameContinue = () => {
+    props.setMenuActive(false);
+    history.push('/game');
+  };
+
   const handleProfile = () => {
     props.setMenuActive(false);
     history.push('/profile');
@@ -66,6 +71,19 @@ export const Menu = (props) => {
         <>
           <h3>{currentUserData.username}</h3>
           <ul className="navigation__menu">
+            {currentUserData.currentGame ? (
+              <li>
+                <button className="btn" onClick={handleGameContinue}>
+                  Pokračovat ve hře
+                </button>
+              </li>
+            ) : null}
+            <li>
+              <button className="btn" onClick={handleNewGame}>
+                Nová hra
+              </button>
+            </li>
+
             <li>
               <button className="btn" onClick={handleProfile}>
                 Profil
@@ -76,11 +94,7 @@ export const Menu = (props) => {
                 Kolekce
               </button>
             </li>
-            <li>
-              <button className="btn" onClick={handleNewGame}>
-                Nová hra
-              </button>
-            </li>
+
             <li>
               <button className="btn" onClick={handleTopWinners}>
                 Nejlepší hráči

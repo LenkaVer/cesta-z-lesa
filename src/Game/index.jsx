@@ -61,7 +61,7 @@ export const Game = () => {
     <>
       {currentUserData && currentUserData.currentGame ? (
         <>
-          <div className="game" ref={gameRef}>
+          <div className="game overflow" ref={gameRef}>
             <div className="game-inner">
               {currentUserData.currentGame.ended ? null : <MainMap />}
               {currentUserData.currentGame.ended ? (
