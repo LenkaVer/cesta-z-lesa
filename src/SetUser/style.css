@@ -21,3 +21,16 @@
 .homepage-navigation__explanation p {
   margin: 0.5rem;
 }
+
+@media (max-width: 1100px) {
+  .homepage-navigation {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .homepage-navigation {
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+}

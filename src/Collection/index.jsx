@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from './../Auth/AuthContext';
 import { collection } from './../Game/questions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import mysteryImg from './Mystery.png';
 import './style.css';
 
@@ -9,8 +11,18 @@ export const Collection = () => {
   const { currentUserData } = useAuth();
   const history = useHistory();
 
+  const handleBack = () => {
+    history.goBack();
+  };
+
   return currentUserData ? (
     <div className="collection overflow">
+      <button
+        className="btn-navigation btn-navigation--collection"
+        onClick={handleBack}
+      >
+        <FontAwesomeIcon icon={faArrowCircleLeft} size="3x" />
+      </button>
       <h2 className="collection__title">
         Kolekce {currentUserData.rewards.length}/{collection.length}
       </h2>

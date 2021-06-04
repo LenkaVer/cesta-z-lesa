@@ -26,6 +26,11 @@ export const Menu = (props) => {
     history.push('/game');
   };
 
+  const handleHomepage = () => {
+    props.setMenuActive(false);
+    history.push('/');
+  };
+
   const handleGameContinue = () => {
     props.setMenuActive(false);
     history.push('/game');
@@ -66,7 +71,7 @@ export const Menu = (props) => {
   };
 
   return (
-    <nav className="navigation">
+    <nav className="navigation overflow">
       {currentUser && currentUserData ? (
         <>
           <h3>{currentUserData.username}</h3>
@@ -79,19 +84,25 @@ export const Menu = (props) => {
               </li>
             ) : null}
             <li>
+              <button className="btn" onClick={handleHomepage}>
+                Úvodní stránka
+              </button>
+            </li>
+
+            <li>
               <button className="btn" onClick={handleNewGame}>
                 Nová hra
+              </button>
+            </li>
+            <li>
+              <button className="btn" onClick={handleCollection}>
+                Kolekce
               </button>
             </li>
 
             <li>
               <button className="btn" onClick={handleProfile}>
                 Profil
-              </button>
-            </li>
-            <li>
-              <button className="btn" onClick={handleCollection}>
-                Kolekce
               </button>
             </li>
 

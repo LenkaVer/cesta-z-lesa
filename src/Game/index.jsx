@@ -1,11 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from './../Auth/AuthContext';
 import { MainMap } from './components/MainMap';
 import { Levels } from './components/Levels/';
 import { Question } from './components/Question';
 import { GameEnded } from './components/GameEnded';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHeart,
+  faTrophy,
+  faArchive,
+} from '@fortawesome/free-solid-svg-icons';
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
 import { questions } from './questions';
 import './style.css';
@@ -85,8 +90,10 @@ export const Game = () => {
               {currentUserData.currentGame.points}
             </p>
             <p>
-              Kolekce:
-              {currentUserData.rewards.length}/{questionsCount}
+              <Link className="link" to="/collection">
+                <FontAwesomeIcon icon={faArchive} />
+                {currentUserData.rewards.length}/{questionsCount}
+              </Link>
             </p>
           </div>
         </>
