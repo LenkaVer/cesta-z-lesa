@@ -32,28 +32,32 @@ function App() {
           ) : (
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/set-user" component={SetUser} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/forgot-password" component={ForgotPassword} />
+              <Route exact path="/nastav-hrace" component={SetUser} />
+              <Route exact path="/registrace" component={Signup} />
+              <Route exact path="/prihlaseni" component={Login} />
               <Route
                 exact
-                path="/signup-anonymous"
+                path="/zapomenute-heslo"
+                component={ForgotPassword}
+              />
+              <Route
+                exact
+                path="/anonymni-prihlaseni"
                 component={SignupAnonymous}
               />
-              <Route exact path="/top-winners" component={TopWinners} />
-              <Route exact path="/credits" component={Credits} />
-              <PrivateRoute exact path="/game" component={Game} />
-              <PrivateRoute exact path="/profile" component={Profile} />
+              <Route exact path="/nejlepsi-hraci" component={TopWinners} />
+              <Route exact path="/zdroje" component={Credits} />
+              <PrivateRoute exact path="/hra" component={Game} />
+              <PrivateRoute exact path="/profil" component={Profile} />
               <PrivateRoute
                 exact
-                path="/update-profile"
+                path="/uprava-profilu"
                 component={UpdateProfile}
               />
-              <PrivateRoute exact path="/collection" component={Collection} />
+              <PrivateRoute exact path="/kolekce" component={Collection} />
               <PrivateRoute
                 exact
-                path="/collection-item/:level/:index"
+                path="/kolekce-polozka/:level/:index"
                 component={CollectionItem}
               />
             </Switch>

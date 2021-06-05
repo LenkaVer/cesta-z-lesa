@@ -19,7 +19,7 @@ export const Login = () => {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       setLoading(false);
-      history.push('/game');
+      history.push('/hra');
     } catch {
       setError('Přihlášení se nezdařilo');
       setLoading(false);
@@ -59,21 +59,21 @@ export const Login = () => {
         </form>
         <div className="user-signup-navigation">
           <div>
-            <Link className="link" to="/forgot-password">
+            <Link className="link" to="/zapomenute-heslo">
               Zapomněli jste heslo?
             </Link>
           </div>
 
           <div>
             Nemáte ještě účet?
-            <Link className="link link-left-space" to="/signup">
+            <Link className="link link-left-space" to="/registrace">
               Zaregistrujte se
             </Link>
           </div>
 
           <div>
             Chcete pokračovat bez registrace?
-            <Link className="link link-left-space" to="/signup-anonymous">
+            <Link className="link link-left-space" to="/anonymni-prihlaseni">
               Pokračovat bez registrace
             </Link>
           </div>

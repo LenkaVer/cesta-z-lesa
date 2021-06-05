@@ -29,7 +29,7 @@ export const GameEnded = () => {
 
     currentUserData.currentGame = null;
     updateUserData(currentUser.uid, currentUserData);
-    history.push('/top-winners');
+    history.push('/nejlepsi-hraci');
   };
 
   return (

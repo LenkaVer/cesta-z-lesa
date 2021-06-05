@@ -55,7 +55,7 @@ export const TopWinners = () => {
         </tbody>
       </table>
       <div className="next">
-        <Link className="btn" to="/game">
+        <Link className="btn" to="/hra">
           Hrát
         </Link>
       </div>

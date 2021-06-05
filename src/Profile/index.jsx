@@ -27,13 +27,13 @@ export const Profile = () => {
 
     try {
       await logout();
-      history.push('/login');
+      history.push('/prihlaseni');
     } catch {
       setError('Failed to log out');
     }
   }
   const handleClick = () => {
-    history.push('/collection');
+    history.push('/kolekce');
   };
 
   return currentUserData ? (
@@ -82,7 +82,7 @@ export const Profile = () => {
         </tbody>
       </table>
       {currentUser.email ? (
-        <Link className="btn" to="/update-profile">
+        <Link className="btn" to="/uprava-profilu">
           Změnit heslo
         </Link>
       ) : null}

@@ -95,7 +95,7 @@ export const Game = () => {
             </p>
             <div className="popup popup-points">Body</div>
             <p className="user-collection__collection">
-              <Link className="link link-collection" to="/collection">
+              <Link className="link link-collection" to="/kolekce">
                 <FontAwesomeIcon className="game-icon" icon={faArchive} />
                 {currentUserData.rewards.length}/{questionsCount}
               </Link>

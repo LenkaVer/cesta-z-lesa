@@ -7,13 +7,13 @@ export const SetUser = () => {
     <>
       <div className="homepage-navigation">
         <div className="homepage-navigation__links">
-          <Link className="btn btn-homepage" to="/signup">
+          <Link className="btn btn-homepage" to="/registrace">
             Registrovat se
           </Link>
-          <Link className="btn btn-homepage" to="/login">
+          <Link className="btn btn-homepage" to="/prihlaseni">
             Přihlásit se
           </Link>
-          <Link className="btn btn-homepage" to="/signup-anonymous">
+          <Link className="btn btn-homepage" to="/anonymni-prihlaseni">
             Pokračovat bez registrace
           </Link>
         </div>

@@ -31,13 +31,13 @@ export const CollectionItem = () => {
       ) {
         setItem(foundItem);
       } else {
-        history.push('/collection');
+        history.push('/kolekce');
       }
     }
   }, [currentUserData, history, level, index]);
 
   const handleCollection = () => {
-    history.push('/collection');
+    history.push('/kolekce');
   };
   return item ? (
     <div>

@@ -38,7 +38,7 @@ export const Collection = () => {
             >
               <div
                 onClick={() =>
-                  history.push(`/collection-item/${item.level}/${item.index}`)
+                  history.push(`/kolekce-polozka/${item.level}/${item.index}`)
                 }
                 className="collection-item__image"
                 style={{ backgroundImage: `url(${item.obrazek})` }}

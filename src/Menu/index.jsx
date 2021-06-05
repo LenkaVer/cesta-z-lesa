@@ -13,7 +13,7 @@ export const Menu = (props) => {
 
     try {
       await logout();
-      history.push('/login');
+      history.push('/prihlaseni');
     } catch {
       setError('Failed to log out');
     }
@@ -23,7 +23,7 @@ export const Menu = (props) => {
     currentUserData.currentGame = null;
     updateUserData(currentUser.uid, currentUserData);
     props.setMenuActive(false);
-    history.push('/game');
+    history.push('/hra');
   };
 
   const handleHomepage = () => {
@@ -33,41 +33,41 @@ export const Menu = (props) => {
 
   const handleGameContinue = () => {
     props.setMenuActive(false);
-    history.push('/game');
+    history.push('/hra');
   };
 
   const handleProfile = () => {
     props.setMenuActive(false);
-    history.push('/profile');
+    history.push('/profil');
   };
 
   const handleCollection = () => {
     props.setMenuActive(false);
-    history.push('/collection');
+    history.push('/kolekce');
   };
 
   const handleTopWinners = () => {
     props.setMenuActive(false);
-    history.push('/top-winners');
+    history.push('/nejlepsi-hraci');
   };
   const handleRegistration = () => {
     props.setMenuActive(false);
-    history.push('/signup');
+    history.push('/registrace');
   };
 
   const handleLogin = () => {
     props.setMenuActive(false);
-    history.push('/login');
+    history.push('/prihlaseni');
   };
 
   const handleSignupAnonymous = () => {
     props.setMenuActive(false);
-    history.push('/signup-anonymous');
+    history.push('/anonymni-prihlaseni');
   };
 
   const handleCredits = () => {
     props.setMenuActive(false);
-    history.push('/credits');
+    history.push('/zdroje');
   };
 
   return (

@@ -30,7 +30,7 @@ export const Home = () => {
         </p>
       </div>
 
-      <Link className=" btn" to="/game">
+      <Link className=" btn" to="/hra">
         Hra
       </Link>
     </div>

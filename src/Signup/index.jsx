@@ -33,7 +33,7 @@ export const Signup = () => {
       if (userCredential) {
         createUserData(userCredential.user.uid, usernameRef.current.value);
         setLoading(false);
-        history.push('/game');
+        history.push('/hra');
       } else {
         setError('Vytvoření účtu se nezdařilo.');
         setLoading(false);
@@ -128,7 +128,7 @@ export const Signup = () => {
 
         <div>
           Již máte účet?
-          <Link className="link link-left-space" to="/login">
+          <Link className="link link-left-space" to="/prihlaseni">
             Přihlásit se
           </Link>
         </div>

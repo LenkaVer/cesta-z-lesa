@@ -21,7 +21,7 @@ export const SignupAnonymous = () => {
       if (userCredential) {
         createUserData(userCredential.user.uid, usernameRef.current.value);
         setLoading(false);
-        history.push('/game');
+        history.push('/hra');
       } else {
         setError('Failed to create an account');
         setLoading(false);
@@ -82,12 +82,12 @@ export const SignupAnonymous = () => {
 
         <div>
           Již máte účet?
-          <Link className="link link-left-space" to="/login">
+          <Link className="link link-left-space" to="/prihlaseni">
             Přihlásit se
           </Link>
         </div>
         <div>
-          <Link className="link" to="/signup">
+          <Link className="link" to="/registrace">
             Registrovat se
           </Link>
         </div>

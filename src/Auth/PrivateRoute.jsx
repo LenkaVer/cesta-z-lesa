@@ -12,7 +12,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
         return currentUser ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/set-user" />
+          <Redirect to="/nastav-hrace" />
         );
       }}
     ></Route>

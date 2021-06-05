@@ -27,11 +27,19 @@
   height: 100%;
 }
 
+.game-icon {
+  color: #05171f;
+  margin-right: 3px;
+}
+
+.game-icon--heart {
+  color: red;
+}
 .user-stats {
   position: absolute;
   right: 10px;
   top: 10px;
-  text-align: right;
+  text-align: center;
 }
 
 .user-stats p {

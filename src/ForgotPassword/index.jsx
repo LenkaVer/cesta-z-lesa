@@ -46,14 +46,14 @@ export const ForgotPassword = () => {
         </form>
 
         <div>
-          <Link className="link" to="/login">
+          <Link className="link" to="/prihlaseni">
             Přihlásit se
           </Link>
         </div>
 
         <div>
           Nemáte ještě účet?
-          <Link className="link link-left-space" to="/signup">
+          <Link className="link link-left-space" to="/registrace">
             Zaregistrujte se
           </Link>
         </div>
