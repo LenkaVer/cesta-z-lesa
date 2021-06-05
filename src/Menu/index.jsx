@@ -74,7 +74,7 @@ export const Menu = (props) => {
     <nav className="navigation overflow">
       {currentUser && currentUserData ? (
         <>
-          <h3>{currentUserData.username}</h3>
+          <h2 className="navigation__user">{currentUserData.username}</h2>
           <ul className="navigation__menu">
             {currentUserData.currentGame ? (
               <li>

@@ -19,6 +19,7 @@ export const Game = () => {
   const gameRef = useRef();
   const { currentUser, currentUserData, updateUserData } = useAuth();
   const [questionsCount, setQuestionsCount] = useState(0);
+  const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {
     let count = 0;
@@ -52,14 +53,18 @@ export const Game = () => {
     for (let i = 0; i < currentUserData.currentGame.lives; i += 1) {
       lives.push(
         <FontAwesomeIcon
+          className="game-icon game-icon--heart"
+          onMouseEnter={() => setIsShown(true)}
+          onMouseLeave={() => setIsShown(false)}
           key={i}
           icon={faHeart}
-          style={{ color: 'red', marginLeft: '5px' }}
         />,
       );
     }
     for (let i = 0; i < currentUserData.currentGame.hints; i += 1) {
-      hints.push(<FontAwesomeIcon key={i} icon={faEarlybirds} />);
+      hints.push(
+        <FontAwesomeIcon className="game-icon" key={i} icon={faEarlybirds} />,
+      );
     }
   }
   return (
@@ -80,18 +85,21 @@ export const Game = () => {
           </div>
 
           <div className="user-stats">
-            {currentUserData.username}
-            <p>{lives}</p>
+            <p className="user-name">{currentUserData.username}</p>
+            <p>
+              {lives}
+              {isShown ? <div>Životy</div> : null}
+            </p>
             <p>{hints}</p>
           </div>
           <div className="user-collection">
             <p>
-              <FontAwesomeIcon icon={faTrophy} />
+              <FontAwesomeIcon className="game-icon" icon={faTrophy} />
               {currentUserData.currentGame.points}
             </p>
             <p>
-              <Link className="link" to="/collection">
-                <FontAwesomeIcon icon={faArchive} />
+              <Link className="link link-collection" to="/collection">
+                <FontAwesomeIcon className="game-icon" icon={faArchive} />
                 {currentUserData.rewards.length}/{questionsCount}
               </Link>
             </p>

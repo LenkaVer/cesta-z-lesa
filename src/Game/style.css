@@ -29,7 +29,7 @@
 
 .user-stats {
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 10px;
   text-align: right;
 }
@@ -40,11 +40,14 @@
 
 .user-collection {
   position: absolute;
-  right: 20px;
+  right: 10px;
   bottom: 10px;
   text-align: right;
 }
 
 .user-collection p {
   margin: 0.6rem;
+}
+.user-name {
+  font-weight: bold;
 }

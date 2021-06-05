@@ -3,8 +3,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+.navigation__user {
+  color: #1f6101;
+
+  margin-bottom: 0;
 }
 
 .navigation__menu {
@@ -13,10 +17,23 @@
   display: flex;
   flex-direction: column;
   padding-inline-start: 0px;
+  margin-top: 0;
   padding: 10px;
 }
 
 .navigation__menu .btn {
   display: block;
   width: 100%;
+}
+
+.link.link-collection {
+  color: #05171f;
+}
+
+.game-icon {
+  color: #05171f;
+  margin-right: 3px;
+}
+.game-icon--heart {
+  color: red;
 }
