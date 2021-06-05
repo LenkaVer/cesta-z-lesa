@@ -13,8 +13,8 @@
 
 .collection-item {
   width: 23%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
   border: 1px solid #05171f;
   border-radius: 10px;
 }
@@ -45,7 +45,7 @@
   text-decoration: none;
   text-align: center;
   background-color: white;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 0 0 10px 10px;
 }
 
@@ -69,7 +69,6 @@
   }
   .collection-item__image {
     width: 100%;
-    height: 200px;
   }
 }
 

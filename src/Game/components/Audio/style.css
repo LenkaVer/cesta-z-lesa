@@ -20,7 +20,7 @@
 
 .audio-bar--inner {
   background-color: #1f6101;
-  height: 10px;
+  height: 0.625rem;
   color: white;
   border-radius: 10px;
 }

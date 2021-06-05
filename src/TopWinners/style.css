@@ -24,7 +24,7 @@
 }
 .top-winners__table th,
 .top-winners__table td {
-  padding: 15px;
+  padding: 0.938rem;
 }
 
 .top-winners__table tbody tr {
@@ -40,6 +40,6 @@
 }
 
 .winners__winner--current {
-  color: red;
+  color: #1f6101;
   font-weight: bold;
 }

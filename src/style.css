@@ -64,12 +64,12 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  padding: 20px;
+  padding: 1.25rem;
   border: 2px solid rgba(0, 0, 0, 0.516);
 
   background-color: rgba(0, 0, 0, 0.029);
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 .base_form.base_form--update-profile {
   width: 97%;
@@ -77,13 +77,13 @@ body {
 
 .base_form .base_form__box {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .base_form .base_form__box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 0.625rem 0;
+  font-size: 1rem;
   color: #1f6101;
   border: none;
   border-bottom: 2px solid #a3c232;
@@ -99,8 +99,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 0.625rem 0;
+  font-size: 1rem;
   color: #1f6101;
   pointer-events: none;
   transition: 0.5s;
@@ -111,23 +111,23 @@ body {
   top: -20px;
   left: 0;
   color: #1f6101;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .base_form .base_form__box input:not(:placeholder-shown):invalid ~ label {
   top: -20px;
   left: 0;
   color: rgb(201, 13, 13);
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .base_form button {
   position: relative;
   cursor: pointer;
   width: 100%;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: white;
   background-color: #749303;
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: uppercase;
   transition: background-color 200ms linear;
   letter-spacing: 4px;
@@ -143,14 +143,14 @@ body {
 .base_form .error {
   display: none;
   color: rgb(201, 13, 13);
-  margin-top: 2px;
-  font-size: 12px;
+  margin-top: 0.125rem;
+  font-size: 0.75rem;
 }
 
 .base_form .error-message {
   color: rgb(201, 13, 13);
-  margin-top: 2px;
-  font-size: 12px;
+  margin-top: 0.125rem;
+  font-size: 0.75rem;
   text-align: center;
 }
 
@@ -161,11 +161,11 @@ body {
 .link {
   display: inline-block;
   color: #749303;
-  padding: 3px;
-  margin-bottom: 3px;
+  padding: 0.188rem;
+  margin-bottom: 0.188rem;
 }
 .link.link-left-space {
-  margin-left: 5px;
+  margin-left: 0.313rem;
 }
 
 .link:hover,
@@ -178,11 +178,11 @@ body {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  margin-top: 30px;
-  padding: 10px 20px;
+  margin-top: 1.875rem;
+  padding: 0.625rem 1.25rem;
   color: white;
   background-color: #749303;
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 4px;
   border: 1px solid #749303;
