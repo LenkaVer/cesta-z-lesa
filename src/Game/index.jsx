@@ -19,7 +19,6 @@ export const Game = () => {
   const gameRef = useRef();
   const { currentUser, currentUserData, updateUserData } = useAuth();
   const [questionsCount, setQuestionsCount] = useState(0);
-  const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {
     let count = 0;
@@ -54,8 +53,6 @@ export const Game = () => {
       lives.push(
         <FontAwesomeIcon
           className="game-icon game-icon--heart"
-          onMouseEnter={() => setIsShown(true)}
-          onMouseLeave={() => setIsShown(false)}
           key={i}
           icon={faHeart}
         />,
@@ -86,23 +83,24 @@ export const Game = () => {
 
           <div className="user-stats">
             <p className="user-name">{currentUserData.username}</p>
-            <p>
-              {lives}
-              {isShown ? <div>Životy</div> : null}
-            </p>
-            <p>{hints}</p>
+            <p className="user-stats__lives">{lives}</p>
+            <div className="popup popup-lives">Životy</div>
+            <p className="user-stats__hints">{hints}</p>
+            <div className="popup popup-hints">Nápovědy</div>
           </div>
           <div className="user-collection">
-            <p>
+            <p className="user-collection__points">
               <FontAwesomeIcon className="game-icon" icon={faTrophy} />
               {currentUserData.currentGame.points}
             </p>
-            <p>
+            <div className="popup popup-points">Body</div>
+            <p className="user-collection__collection">
               <Link className="link link-collection" to="/collection">
                 <FontAwesomeIcon className="game-icon" icon={faArchive} />
                 {currentUserData.rewards.length}/{questionsCount}
               </Link>
             </p>
+            <div className="popup popup-collection">Kolekce</div>
           </div>
         </>
       ) : null}

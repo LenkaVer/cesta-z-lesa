@@ -43,7 +43,9 @@ export const Collection = () => {
                 className="collection-item__image"
                 style={{ backgroundImage: `url(${item.obrazek})` }}
               >
-                <h5 className="collection-item__title">{item.titulek}</h5>
+                <h5 className="collection-item__title">
+                  {index + 1}. {item.titulek}
+                </h5>
               </div>
             </div>
           ) : (
@@ -51,7 +53,10 @@ export const Collection = () => {
               <div
                 className="collection-item__image"
                 style={{ backgroundImage: `url(${mysteryImg})` }}
-              ></div>
+              >
+                {' '}
+                <h5 className="collection-item__title mystery">{index + 1}.</h5>
+              </div>
             </div>
           );
         })}

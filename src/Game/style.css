@@ -42,7 +42,7 @@
   position: absolute;
   right: 10px;
   bottom: 10px;
-  text-align: right;
+  text-align: left;
 }
 
 .user-collection p {
@@ -50,4 +50,37 @@
 }
 .user-name {
   font-weight: bold;
+}
+
+.popup {
+  background-color: #1f6101;
+  color: white;
+  text-align: center;
+  padding: 0.188rem;
+  position: absolute;
+  display: none;
+  font-weight: bold;
+  border: 1px solid #05171f;
+  border-radius: 10px;
+  transform: translate(-100%, 0%);
+}
+.user-stats__lives:hover ~ .popup-lives,
+.user-stats__hints:hover ~ .popup-hints,
+.user-collection__points:hover ~ .popup-points,
+.user-collection__collection:hover ~ .popup-collection {
+  display: block;
+}
+
+.popup-lives {
+  top: 36px;
+}
+.popup-hints {
+  top: 68px;
+}
+
+.popup-points {
+  top: 5px;
+}
+.popup-collection {
+  top: 40px;
 }
