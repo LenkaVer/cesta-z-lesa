@@ -163,11 +163,11 @@ export const questions = [
           spravne: true,
         },
         {
-          nazev: 'Psík mývalovitý',
+          nazev: 'Psík mývalovitý',
           spravne: false,
         },
         {
-          nazev: 'Králík divoký',
+          nazev: 'Králík divoký',
           spravne: false,
         },
         {
@@ -1222,7 +1222,7 @@ export const questions = [
           spravne: false,
         },
         {
-          nazev: 'Puštík bělavý',
+          nazev: 'Puštík bělavý',
           spravne: false,
         },
       ],
@@ -1353,15 +1353,15 @@ export const questions = [
           spravne: true,
         },
         {
-          nazev: 'Vrána obecná',
+          nazev: 'Vrána obecná',
           spravne: false,
         },
         {
-          nazev: 'Tetřev hlušec',
+          nazev: 'Tetřev hlušec',
           spravne: false,
         },
         {
-          nazev: 'Sluka lesní',
+          nazev: 'Sluka lesní',
           spravne: false,
         },
       ],
@@ -1411,7 +1411,7 @@ export const questions = [
           spravne: true,
         },
         {
-          nazev: 'Psík mývalovitý',
+          nazev: 'Psík mývalovitý',
           spravne: false,
         },
         {
