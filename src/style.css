@@ -66,6 +66,7 @@ body {
   max-width: 400px;
   padding: 20px;
   border: 2px solid rgba(0, 0, 0, 0.516);
+
   background-color: rgba(0, 0, 0, 0.029);
   border-radius: 10px;
   margin-bottom: 10px;
@@ -158,7 +159,10 @@ body {
 }
 
 .link {
+  display: inline-block;
   color: #749303;
+  padding: 3px;
+  margin-bottom: 3px;
 }
 .link.link-left-space {
   margin-left: 5px;

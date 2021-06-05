@@ -127,6 +127,11 @@ export const Menu = (props) => {
       ) : (
         <ul className="navigation__menu">
           <li>
+            <button className="btn" onClick={handleHomepage}>
+              Úvodní stránka
+            </button>
+          </li>
+          <li>
             <button className="btn" onClick={handleRegistration}>
               Registrovat se
             </button>

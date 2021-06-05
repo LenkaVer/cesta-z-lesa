@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from './../Auth/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import './style.css';
 
 export const Login = () => {
   const emailRef = useRef();
@@ -56,25 +57,26 @@ export const Login = () => {
             Přihlásit se
           </button>
         </form>
+        <div className="user-signup-navigation">
+          <div>
+            <Link className="link" to="/forgot-password">
+              Zapomněli jste heslo?
+            </Link>
+          </div>
 
-        <div>
-          <Link className="link" to="/forgot-password">
-            Zapomněli jste heslo?
-          </Link>
-        </div>
+          <div>
+            Nemáte ještě účet?
+            <Link className="link link-left-space" to="/signup">
+              Zaregistrujte se
+            </Link>
+          </div>
 
-        <div>
-          Nemáte ještě účet?
-          <Link className="link link-left-space" to="/signup">
-            Zaregistrujte se
-          </Link>
-        </div>
-
-        <div>
-          Chcete pokračovat bez registrace?
-          <Link className="link link-left-space" to="/signup-anonymous">
-            Pokračovat bez registrace
-          </Link>
+          <div>
+            Chcete pokračovat bez registrace?
+            <Link className="link link-left-space" to="/signup-anonymous">
+              Pokračovat bez registrace
+            </Link>
+          </div>
         </div>
       </div>
     </>
