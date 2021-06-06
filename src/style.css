@@ -211,6 +211,11 @@ body {
   border: 2px solid #1f6101;
   color: #1f6101;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
+  transition: background-color 200ms linear, color 200ms linear;
+}
+.btn-navigation:hover {
+  background-color: #1f6101;
+  color: white;
 }
 
 @media (max-width: 1450px) {

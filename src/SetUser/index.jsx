@@ -19,14 +19,13 @@ export const SetUser = () => {
         </div>
         <div className="homepage-navigation__explanation">
           <p>
-            Registrovaní uživatelé si mohou na svém profilu zobrazit dosažené
-            body za odehrané hry a mohou se k rozehrané hře vrátit z různých
-            zařízení.
+            Registrovaní uživatelé se mohou k rozehrané hře vrátit z různých
+            zařízení. Na svém účtu mají informace o odehraných hrách a uloženou
+            svojí kolekci zvířat (při správné odpovědi se uloží informace o
+            zvířeti do kolekce).
           </p>
           <p>
-            Pokud správně uhodnou zvíře z nahrávky, získavají informace o
-            zvířeti (obrázek a zajímavost) do své galerie, kterou si mohou na
-            profilu prohlížet. Mouhou tak získat galerii 48 zvířat.
+            Neregistrovaní uživatelé o tyto informace při odhlášení přijdou.
           </p>
         </div>
       </div>

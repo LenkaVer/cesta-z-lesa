@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './style.css';
 
 export const Credits = () => {
@@ -61,9 +62,7 @@ export const Credits = () => {
               Background vector created by pikisuperstar - www.freepik.com
             </a>
           </li>
-
           <h4>Poděkování</h4>
-
           <li>
             Tato aplikace vznikla jako závěrečný projekt kurzu
             <a
@@ -73,6 +72,17 @@ export const Credits = () => {
               target="_blank"
             >
               Digitální akademie web, Czechitas
+            </a>
+          </li>
+          <h4>Kontakt</h4>
+          <li>
+            <a
+              className="link"
+              href="mailto:info.lesnistezka@gmail.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              info.lesnistezka@gmail.com
             </a>
           </li>
         </ul>

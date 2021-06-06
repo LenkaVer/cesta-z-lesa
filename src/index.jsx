@@ -16,6 +16,7 @@ import { Menu } from './Menu';
 import { SignupAnonymous } from './SignupAnonymous';
 import { SetUser } from './SetUser';
 import { Credits } from './Credits';
+import { GoHome } from './GoHome';
 import { CollectionItem } from './CollectionItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -62,12 +63,14 @@ function App() {
               />
             </Switch>
           )}
+
           <button
             className="btn-navigation"
             onClick={() => setMenuActive(!menuActive)}
           >
             <FontAwesomeIcon icon={faBars} size="3x" />
           </button>
+          <GoHome />
         </main>
       </Router>
     </AuthProvider>

@@ -1,13 +1,19 @@
 .btn-audio {
   margin-top: 1.5rem;
-  padding: 0;
   cursor: pointer;
   text-align: center;
+  width: 65px;
+  height: 60px;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #1f6101;
   color: #1f6101;
-  border-radius: 50%;
-  border: transparent;
-  background-color: transparent;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.294);
+  transition: background-color 200ms linear, color 200ms linear;
+}
+.btn-audio:hover {
+  background-color: #1f6101;
+  color: white;
 }
 
 .audio-bar {
