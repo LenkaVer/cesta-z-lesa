@@ -37,7 +37,7 @@ export const Profile = () => {
   };
 
   return currentUserData ? (
-    <div className="user-profile">
+    <div className="user-profile overflow">
       {error && <div>{error}</div>}
       <table className="user-profile__table">
         <thead>

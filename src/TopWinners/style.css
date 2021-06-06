@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0.625rem;
 }
 
 .top-winners__table {
@@ -42,4 +43,20 @@
 .winners__winner--current {
   color: #1f6101;
   font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+  .top-winners {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .top-winners {
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+  .top-winners__table {
+    width: 85%;
+  }
 }
