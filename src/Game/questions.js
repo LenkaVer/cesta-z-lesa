@@ -300,15 +300,15 @@ export const questions = [
       soubor: dlaskTlustozobyMp3,
       odpovedi: [
         {
-          nazev: 'Čížek lesní',
+          nazev: 'Dlask tlustozobý',
           spravne: true,
         },
         {
-          nazev: 'Sýkora modřinka',
+          nazev: 'Brhlík lesní',
           spravne: false,
         },
         {
-          nazev: 'Sýkora koňadra',
+          nazev: 'Drozd kvíčala',
           spravne: false,
         },
         {
