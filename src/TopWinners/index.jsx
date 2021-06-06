@@ -45,33 +45,11 @@ export const TopWinners = () => {
                 ? 'winners__winner winners__winner--current'
                 : 'winners__winner';
             return (
-              <>
-                <tr key={player.id} className={playerClass}>
-                  <td>{index + 1}.</td>
-                  <td>{player.username}</td>
-                  <td>{player.bestScore}</td>
-                </tr>
-                <tr key={player.id} className={playerClass}>
-                  <td>{index + 1}.</td>
-                  <td>{player.username}</td>
-                  <td>{player.bestScore}</td>
-                </tr>
-                <tr key={player.id} className={playerClass}>
-                  <td>{index + 1}.</td>
-                  <td>{player.username}</td>
-                  <td>{player.bestScore}</td>
-                </tr>
-                <tr key={player.id} className={playerClass}>
-                  <td>{index + 1}.</td>
-                  <td>{player.username}</td>
-                  <td>{player.bestScore}</td>
-                </tr>
-                <tr key={player.id} className={playerClass}>
-                  <td>{index + 1}.</td>
-                  <td>{player.username}</td>
-                  <td>{player.bestScore}</td>
-                </tr>
-              </>
+              <tr key={player.id} className={playerClass}>
+                <td>{index + 1}.</td>
+                <td>{player.username}</td>
+                <td>{player.bestScore}</td>
+              </tr>
             );
           })}
         </tbody>
