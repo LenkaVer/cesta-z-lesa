@@ -70,7 +70,7 @@ function App() {
           >
             <FontAwesomeIcon icon={faBars} size="3x" />
           </button>
-          <GoHome />
+          <GoHome setMenuActive={setMenuActive} menuActive={menuActive} />
         </main>
       </Router>
     </AuthProvider>

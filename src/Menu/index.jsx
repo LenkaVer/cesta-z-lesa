@@ -26,11 +26,6 @@ export const Menu = (props) => {
     history.push('/hra');
   };
 
-  const handleHomepage = () => {
-    props.setMenuActive(false);
-    history.push('/');
-  };
-
   const handleGameContinue = () => {
     props.setMenuActive(false);
     history.push('/hra');
@@ -84,12 +79,6 @@ export const Menu = (props) => {
               </li>
             ) : null}
             <li>
-              <button className="btn" onClick={handleHomepage}>
-                Úvodní stránka
-              </button>
-            </li>
-
-            <li>
               <button className="btn" onClick={handleNewGame}>
                 Nová hra
               </button>
@@ -99,13 +88,11 @@ export const Menu = (props) => {
                 Kolekce
               </button>
             </li>
-
             <li>
               <button className="btn" onClick={handleProfile}>
                 Profil
               </button>
             </li>
-
             <li>
               <button className="btn" onClick={handleTopWinners}>
                 Nejlepší hráči
@@ -126,11 +113,6 @@ export const Menu = (props) => {
         </>
       ) : (
         <ul className="navigation__menu">
-          <li>
-            <button className="btn" onClick={handleHomepage}>
-              Úvodní stránka
-            </button>
-          </li>
           <li>
             <button className="btn" onClick={handleRegistration}>
               Registrovat se
