@@ -730,7 +730,7 @@ export const questions = [
           spravne: true,
         },
         {
-          nazev: 'Krkavec velký',
+          nazev: 'Krkavec velký',
           spravne: false,
         },
         {
